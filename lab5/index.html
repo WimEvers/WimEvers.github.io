@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>HTML Clean Up Lab</title>
+</head>
+
+<body>
+  <form>
+    <fieldset>
+      <legend>My Info</legend>
+      <div>
+        <label>first name: <input type="text" name="first_name_field" placeholder="first name:"></label>
+      </div>
+      <div>
+        <label>last name:<input type="text" name="last_name_field" placeholder="last name:">
+      </div>
+      <div>
+        <label>phone:<input type="text" name="phone_field" placeholder="phone:">
+      </div>
+      <div>
+        <input type="email" name="email_field"  placeholder="email:">
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>My Availability</legend>
+      <div>
+        <textarea name="comments_field" cols="30", rows="2"> </textarea>
+      </div>
+    </fieldset>
+    <input type="submit" value="get started">
+  </form>
+</body>
+
+</html>
+<!__ Form processing script expects the controls to have exactly the following name attributes.
+
+    comments_field
+    gender_field
+    available_field[] (note the php array syntax [] to allow multiple values)
+    age_field
+    hidden_field
+__>
