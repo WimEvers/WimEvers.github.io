@@ -92,7 +92,7 @@ h2 strong{
 }
   
 #main-nav ul li{ 
-  float: left;
+  float: right;
   position: relative;
   right: 50%;
 }
