@@ -1,11 +1,27 @@
+table {
+  table-layout: auto;
+  background: lightblue;
+  font-family: 'Zain', sans-serif;
+  text-align: center;
+  border-collapse: collapse;
+  width: 50%;
+}
+.tablepadding {
+    padding: 20px 10px 10px 20px;
+}
 
-td, th {
+td {
 	border: 1px solid;
 }
 
+th {
+  border: 1px solid;
+  font-size: 1.5em;
+}
 
 body {
   background:darkblue;
+  font-family: 'Zain', sans-serif;
 }
  
 .block {
@@ -16,8 +32,49 @@ body {
   border-radius: 4px;
 }
 
-h1 {color: white;
+ul li{
+  display: inline;
+  list-style-type: none;
+  padding-left: 10%;
+  size: 30%;
+  font-size: 2.5em;
 }
+
+h1 {
+  position: relative;
+  margin: auto;
+  text-align: center;
+  top: 5px;
+  font-size: 4em;
+  font-family: 'Zain', sans-serif;
+  color: white;
+}
+
+h2 {
+  top: 5px;
+  font-size: 2.5em;
+  font-family: 'Zain', sans-serif;
+  color: white;
+}
+
+p {
+  top: 1px;
+  font-size: 1.5em;
+  font-family: 'Zain', sans-serif;
+  color: white;
+  margin: 10px 10px 10px 10px;
+}
+
+.image {
+  float: right;
+  width: 600px;
+  margin: 10px;
+}
+
+.headerlist {
+  background-color: lightblue;
+}
+
 /* 
 #page-wrapper {
   width: 960px;
@@ -32,14 +89,7 @@ h1 {color: white;
   border-radius: 12px 12px 0px 0px; 
 }
 
-#header h1 {
-  position: absolute;
-  left: 420px;
-  top:5px;
-  font-size: 3em;
-  font-family: 'Devonshire', cursive;
-  color: #E35335;
-}
+
 
 #header a#logo1 img {
   margin-top: 20px;
@@ -80,15 +130,7 @@ h2 strong {
   font-weight: 900;
 }
 */
-.image-r {
-  float: left;
-  border: 2px solid white;
-  width: 600px;
-  padding: 5px;
-  background-color: white;
-  margin: 10px 0 10px 20px;
-  border-radius: 4px;
-}
+
 /*
 #side-content {
   min-height: 150px;
