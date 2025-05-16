@@ -95,8 +95,8 @@ p {
 }
 
 div {
-  width=100%;
   height: auto;
+  width: 100%;
 }
 .image {
   float: right;
