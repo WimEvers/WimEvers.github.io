@@ -23,23 +23,47 @@ body {
   background:darkblue;
   font-family: 'Zain', sans-serif;
 }
- 
-.block {
-  display: block;
-}
 
 .rounded {
   border-radius: 4px;
 }
 
+.center {
+  height: 2.7em;
+  line-height: 2.7em;
+}
+
+div {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+
+ul {
+  padding-left: 0;
+  margin-left: 0;
+  background-color: lightblue;
+  color: White;
+  float: left;
+  width: 100%;
+}
+
 ul li{
   display: inline;
   list-style-type: none;
-  padding-left: 10%;
-  size: 30%;
+  padding-left: 5%;
   font-size: 2.5em;
 }
+ul li a {
+}
 
+ul li a:hover {
+  background-color: white;
+  color: darkblue;
+  margin-top: 0px;
+  padding-top: 0px;
+  height: 2.7em;
+  line-height: 2.7em;
+}
 h1 {
   position: relative;
   margin: auto;
