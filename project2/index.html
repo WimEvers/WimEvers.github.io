@@ -3,25 +3,40 @@
 <head>
   <meta charset="utf-8">
   <title>Home page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet"> <!-- font definition -->
+  <link rel="stylesheet" type="text/css" href="css/normalize.css"> <!-- reset browser's css -->
+  <link rel="stylesheet" href="css/style.css"> <!-- define own styling -->
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home page</a></li>
-      <li><a href="hobby/index.html">My hobby</a></li>
-      <li><a href="resume/index.html">My Resume</a></li>
-    </ul>
-  <nav>
-  <h2>About me</h2>
-  <p>I'm a retired mechanical engineer</p>
-  <p>To keep my mind sharp I've learned and used python, access and excel programming to automate some cumbersome list keeping</p>
-  <p>I thought it fun to make my own website so now I'm learning just how to do that</p>
-  <h3>My activities</h3>
-  <p>I am an active reader of Science fiction and Fantasy books (I own some 1800 books and about 2000 booklets (the Perry Rhodan series, not complete however). 
-  Some of my favourites: Larry Niven, Django Wexler, John Gwynne, Eric Frank Russel and Raymond Fiest</p>
-  <p><img src="media/images/library.png" alt="(part of) my collection SFnF" width="400" height="300"></p>
-  <p>I have a vegetable garden (together with a friend) where I grow my organic vegetables.</p>
-  <p><img src="media/images/garden.png" alt="My vegetable garden" width="400" height="300"></p>
-  <p>In the spare time left I like to do some computer gaming. My current favourites: Hearthstone, Civilization and Baldur's gate 3</p>
+  <header>  <!-- navigation enclosed within a header, avoid contamination of navbar data with rest of body -->
+    <nav id="navbar">
+      <ul>
+        <li id="onpage"><a href="index.html">Home page</a></li> <!-- "onpage" shows user on which page he is -->
+        <li><a href="hobby/index.html">My hobby</a></li>
+        <li><a href="resume/index.html">My Resume</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div>
+    <h2>About me</h2>
+    <p>I'm a retired mechanical engineer</p>
+    <p>To keep my mind sharp I've learned and used python, access and excel programming to automate some cumbersome list keeping</p>
+    <p>I thought it fun to make my own website so now I'm learning just how to do that</p>
+    <h3>My activities</h3>
+  </div>
+  <div>
+    <p>I am an active reader of Science fiction and Fantasy books (I own some 1800 books and about 2000 booklets (the Perry Rhodan series, not complete however). 
+    Some of my favourites: Larry Niven, Django Wexler, John Gwynne, Eric Frank Russel and Raymond Fiest
+    <img class="image" src="media/images/library.png" alt="(part of) my collection SFnF"></p>
+  </div>
+  <div>
+    <p>I have a vegetable garden (together with a friend) where I grow my organic vegetables.
+    <img class="image" src="media/images/garden.png" alt="My vegetable garden"></p>
+  </div>
+  <div>
+    <p>In the spare time left I like to do some computer gaming. My current favourites: Hearthstone, Civilization and Baldur's gate 3</p>
+  </div>
 </body>
 </html>

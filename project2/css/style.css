@@ -1,67 +1,76 @@
+body {
+font-family: Arial;
+}
 
-#main-navbar {
+div{
+  margin: 1% 1% 1% 1%;
+}
+
+#navbar {
   background-color: blue;
   overflow: hidden;
+  height: 2em;
 }
 
-#navbar-container {
-  float: left;
-  width: 100%;
-  position: relative;
-}
-
-#main-navbar ul {
+#navbar ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  position: relative;
-  left: 50%;
   float: left;
+  height: 2em;
+  font-family: Zain, sans-serif;
+  left: 20%;
 }
 
-#main-navbar ul li {
+#navbar ul li {
   float: left;
-  position: relative;
-  right: 50%;
-  display: block;
+  position: static;
+  padding: 0.5em 2em 0.5em 2em;
+  font-size: 1em; /*  total height = padding bottom + font + padding top = 0.5+1+0.5=2em */
+  display:block;
 }
 
-#main-navbar ul li a {
+#navbar ul li a {
   display: block;
-  padding: 10px 20px;
-  color: #fff;
+  color: white;
   text-decoration: none;
 }
 
-#main-navbar ul li a:hover {
-  background-color: #000;
+#navbar ul li a:hover {
+  display: block;
+  background-color: black;
 }
 
 #onpage {
-  text-decoration: underline overline;
+  background-color: black;
+  color: white;
 }
 
-#sidebar {
-  position: fixed;
-  right:0%;
-  background-color: red;
-  height: 100%;
-  width: 20%;
-}
-
-#sidebar ul {
-  list-style-type: none;
-  text-align: center;
-  padding: 0;
-}
-
-#sidebar ul li a {
+.image {
+  position: relative;
+  float: right;
+  right: 2%;
+  width: 45%;
+  height: auto;
   display: block;
-  padding: 15px 0;
-  color: #fff;
-  text-decoration: none;
+  padding: 0 2.5% 0 2.5%
 }
 
-#sidebar ul li a:hover {
-  background-color: #000;
+.relative {
+  position: relative;
+  width: 100%;
+  height: 300%;
+  border: 3px solid #73AD21;
+} 
+
+.absolute {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45%;
+  height: auto;
+  border: 3px solid #73AD21;
+  
+.border{
+ border: 0
 }
