@@ -6,6 +6,16 @@ div{
   margin: 1% 1% 1% 1%;
 }
 
+th, td {
+  padding: 0.5%;
+  text-align: left;
+  height: 0.6em
+}
+
+table {
+  width: 40%
+}
+
 #navbar {
   background-color: blue;
   overflow: hidden;
@@ -22,21 +32,18 @@ div{
 }
 
 #navbar ul li {
-  float: left;
-  position: static;
-  padding: 0.5em 2em 0.5em 2em;
- /*  total height = padding bottom + font + padding top = 0.5+2+0.5=3em */
-  display:block;
+  float: left; /* Use float to get block elements to float next to each other */
 }
 
 #navbar ul li a {
-  display: block;
+  display:block; /* Allows to specify padding (and height, width, margins, etc.) */
   color: white;
+  padding: 0.5em 2em 0.5em 2em;  /*  total height = padding bottom + font + padding top = 0.5+2+0.5=3em */
   text-decoration: none;
 }
 
 #navbar ul li a:hover {
-  display: block;
+  /*display: block;*/
   background-color: black;
 }
 
