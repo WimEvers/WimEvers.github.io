@@ -1,0 +1,131 @@
+body {
+font-family: Arial;
+}
+
+div{
+  margin: 1% 1% 1% 1%;
+}
+
+th, td {
+  padding: 0.5%;
+  text-align: left;
+  height: 0.6em
+}
+
+table {
+  width: 40%
+}
+
+#navbar {
+  background-color: blue;
+  overflow: hidden;
+  font-size: 2em;
+}
+
+#navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  float: left;
+  font-family: Zain, sans-serif;
+}
+
+#navbar ul li {
+  float: left; /* Use float to get block elements to float next to each other */
+}
+
+#navbar ul li a {
+  display:block; /* Allows to specify padding (and height, width, margins, etc.) */
+  color: white;
+  padding: 0.5em 2em 0.5em 2em;  /*  total height = padding bottom + font + padding top = 0.5+2+0.5=3em */
+  text-decoration: none;
+}
+
+#navbar ul li a:hover {
+  /*display: block;*/
+  background-color: black;
+}
+
+#onpage {
+  background-color: black;
+  color: white;
+}
+
+.image {
+  position: relative;
+  float: right;
+  right: 2%;
+  width: 45%;
+  height: auto;
+  display: block;
+  padding: 0 2.5% 0 2.5%
+}
+  
+.ytborder {
+ border: 0
+}
+
+/* wrapper and canvas are used only in the maps page */
+
+#wrapper {
+  width: 960px;
+  height: 900px;
+  background: linear-gradient(to bottom, #feffff 0%,#ddf1f9 45%,#a0d8ef 100%);
+  margin:0 auto;
+  overflow: hidden;
+}
+#canvas {
+  width: 900px;
+  height: 800px;
+  background-color: #ccc;
+  margin: 20px auto;
+}
+
+/* modern gsm */
+
+@media screen and (max-width: 960px){
+  #navbar {
+    font-size: 1.5em;
+  }
+  #navbar ul li {
+    float: none;
+    width: 100%;
+  }
+  #wrapper {
+    width: 580px;
+    height: 500px;
+    margin:0 auto;
+    overflow: hidden;
+    background: linear-gradient(to bottom,  #ebf1f6 0%,#abd3ee 50%,#89c3eb 51%,#d5ebfb 100%);
+  }
+    #canvas {
+    width: 550px;
+    height: 450px;
+    background-color: #ccc;
+    margin: 10px auto;
+  }
+}
+
+/* small screen */
+@media screen and (max-width: 600px) {
+    #navbar {
+    font-size: 1em;
+  }
+  #navbar ul li {
+    float: none;
+    width: 100%;
+  }
+  #wrapper {
+    width: 550px;
+    height: 500px;
+    margin:0 auto;
+    overflow: hidden;
+    background: linear-gradient(to bottom,  #87e0fd 0%,#53cbf1 34%,#05abe0 100%);
+  }
+    #canvas {
+    width: 510px;
+    height: 450px;
+    background-color: #ccc;
+    margin: 15px auto;
+  }
+}
