@@ -1,13 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Internet Technologies and Web Design</title>
+  <meta charset="utf-8">           
+  <title>OSM and Leaflet</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
 <body>
-  <p>&amp; Hello world. This is my first website!</p>
-  <p>I'm a retired mechanical engineer</p>
-  <p>To keep my mind sharp I've learned and used python</p>
-  <p>I thought it fun to make my own website so now I'm learning just how to do that</p>
+  <div id = "map" style = "width: 900px; height: 580px background-color: blue"></div>
+  <script>
+  // Creating map options
+  var mapOptions = {
+    center: [17.385044, 78.486671],
+    zoom: 10
+    }
+                 
+    // Creating a map object
+    var map = new L.map('map', mapOptions);
+                 
+    // Creating a Layer object
+    var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+                 
+    // Adding layer to the map
+    map.addLayer(layer);
+  </script>
+  <iframe width="425" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=-5.394287109375%2C49.69606181911566%2C12.952880859375002%2C55.372868141151756&amp;layer=mapnik" style="border: 1px solid black"></iframe>
+  <small><a href="https://www.openstreetmap.org/?#map=7/52.626/3.779">Grotere kaart weergeven</a></small>
+  <iframe width="425" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=5.862407684326172, 51.14694041751984, 6.089000701904297,51.23849153630399&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small>
 </body>
 </html>
+
+<!--
+<!DOCTYPE html>
+        <html>
+           <head>
+              <title>OSM and Leaflet</title>
+              <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+           </head><body>
+              <div id = "map" style = "width: 900px; height: 580px"></div><script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+              <script>
+                 // Creating map options
+                 var mapOptions = {
+                    center: [17.385044, 78.486671],
+                    zoom: 10
+                 }
+                 
+                 // Creating a map object
+                 var map = new L.map('map', mapOptions);
+                 
+                 // Creating a Layer object
+                 var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+                 
+                 // Adding layer to the map
+                 map.addLayer(layer);
+              </script>
+           </body>
+           
+        </html>
+-->
