@@ -19,5 +19,5 @@ function init(){
   
   button.addEventListener('click',myfunction);
 }
-
+alert("alert before load")
 window.addEventListener('load', init);
