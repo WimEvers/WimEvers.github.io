@@ -1,6 +1,8 @@
 #map { 
   height: 900px;
   width: 100%;
+  position: relative;
+  z-index: 5;
   }
 
 body {
@@ -49,11 +51,12 @@ table {
 }
 
 #navbar ul li a {
-  display:block; /* Allows to specify padding (and height, width, margins, etc.) */
+  display:block; /* Allows to specify padding (and height, width, margins, etc.)
+  padding-top: 5px;
+  padding-bottom: 5px;*/
   padding-left: 2em; 
-  padding-right: 2em;  /*  total height = padding bottom + font + padding top = 4+20+4=30px */
+  padding-right: 2em;  /*  total height = padding bottom + font + padding top = 5+20+5=30px */
   text-decoration: none;
-  /* color: white; */
 }
 
 #navbar ul li a:hover {
@@ -68,6 +71,17 @@ table {
 .grayedout {
   color: black;
   background-color: gray;
+}
+
+.menu {
+  position: absolute;
+  background: white;
+  width: 100px;
+  right: 20px;
+  top: 50px;
+  height: 400px;
+  z-index: 10;
+  border: 2px solid black;
 }
   
 /*
