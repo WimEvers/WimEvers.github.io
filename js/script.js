@@ -1,11 +1,17 @@
 function init(){
     //alert("init called");
  }
-
+/*
 function zoomregio() {
   //kijk welke popup open is
-  
-}
+  // Welke regio is popup open?
+  if(marker.isPopupOpen()) {
+  // do something
+  }
+  else {
+    // do nothing
+  }
+} */
 
 //alert("js initialized");
 var map = L.map('map').setView([37.09,-0.53], 3);  // hele wereld = geo:37.09,-0.53?z=3
@@ -24,20 +30,19 @@ const vakregio = [
 ];
 
 var regionaam;
-var regiopos;
-
-console.log("length =",vakregio.length);
-console.log("depth=", vakregio[0].length);
-console.log(vakregio[1][3]);
-
+const markerlist = [];
+console.log(markerlist.length)
 for (var i = 0; i < vakregio.length; ++i) {
-  for (var j = 0; j < vakregio[i].length; ++j) {
+/*for (var j = 0; j < vakregio[i].length; ++j) {*/
     regionaam="<p>"+vakregio[i][3]+"</p>";
-    regiopos="["+vakregio[i][0]+","+vakregio[i][1]+"]";
-    console.log(regionaam, regiopos)
-    L.marker([vakregio[i][0], vakregio[i][1]]).addTo(map).bindPopup(regionaam).openPopup();
-  }
+    console.log(regionaam);
+    markerA = L.marker([vakregio[i][0], vakregio[i][1]]).addTo(map).bindPopup(regionaam).openPopup();
+    console.log(markerA)
+    markerlist.push(markerA);
+  /*}*/
 }
+console.log(markerlist.length)
+
 map.closePopup()
 
 /*Data locaties 
@@ -47,6 +52,8 @@ const locaties = [
 [28.35221,-16.835699, "Los Silos", "Canarische eilanden", "Spanje", 2025, "April"],
 [28.28526,-16.43538 , "Guimar",    "Canarische eilanden", "Spanje", 2025, "April"],
 [28.14428,-17.21317 , "Hermigua",  "Canarische eilanden", "Spanje", 2025, "April"] ];
+
+
 
 //hier komt de loop over een specifiek regio
 
