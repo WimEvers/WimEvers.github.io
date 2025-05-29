@@ -3,21 +3,39 @@ function init(){
  }
 
 //alert("js initialized");
-var map = L.map('map').setView([28.281,-16.927], 10);
+var map = L.map('map').setView([37.09,-0.53], 3);  // hele wereld = geo:37.09,-0.53?z=3
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 19,
   attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(map);
-var markerLS = L.marker([28.35221,-16.835699]).addTo(map).bindPopup("<p>Los Silos</p>").openPopup();
+
+/*Data locaties 
+formaat: 
+latitude, langitude, plaatsnaam, regio, land, jaartal, maand */
+const locaties = [
+[28.35221,-16.835699, "Los Silos", "Canarische eilanden", "Spanje", 2025, "April"],
+[28.28526,-16.43538 , "Guimar",    "Canarische eilanden", "Spanje", 2025, "April"],
+[28.14428,-17.21317 , "Hermigua",  "Canarische eilanden", "Spanje", 2025, "April"] ];
+
+//hier komt de loop over alle locaties
+
+//var markerLS = 
+L.marker([28.35221,-16.835699]).addTo(map).bindPopup("<p>Los Silos</p>").openPopup();
 var markerG = L.marker([28.28526,-16.43538]).addTo(map).bindPopup("<p>Guimar</p>").openPopup();
 var markerH = L.marker([28.14428,-17.21317]).addTo(map).bindPopup("<p>Hermigua</p><div><img src='image/hermigua.png'/></div>").openPopup();
 // blijkbaar kan ik ook een functie hier ingeven, deze functie moet dan wel een html element terug geven wat in de overlay gebruikt kan worden
+map.closePopup()
     
 //markerLS.bindPopup("Los Silos").openPopup();
 //markerG.bindPopup("Guimar").openPopup();
 //markerH.bindPopup("Hermigua").openPopup();
-//map.closePopup()
-  
+
+
+// screen size
+var w = window.innerWidth;
+var h = window.innerHeight;
+alert("Browser width: " + w + ", height: " + h + ".")
+
 var popup = L.popup();
 
 function onMapClick(e) {

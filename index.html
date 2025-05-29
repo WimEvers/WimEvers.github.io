@@ -12,6 +12,7 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="">
   </script>
 <body>
+
   <header>  <!-- navigation enclosed within a header, avoid contamination of navbar data with rest of body -->
     <nav id="navbar">
       <ul>
@@ -23,6 +24,18 @@
     </nav>
   </header>
   <div id="map"></div>
+  <!-- <script> // needs to be here to set the maximum height of the map window
+    // screen size
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+    alert("Browser width: " + w + ", height: " + h + ".");
+    var el = document.getElementById("map");
+    if (el) {
+      el.style.height = h;
+      el.style.width = "w
+      //el.style.height = ""+h+"px";
+      //el.style.width = ""+w+"px";
+  </script> -->
   <script src="js/script.js"></script> <!-- own script must be at the bottom for leaflet to function as "map" needs to be defined on beforehand (I think) -->
 </body>
 </html>
