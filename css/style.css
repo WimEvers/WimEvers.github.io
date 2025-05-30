@@ -11,7 +11,8 @@ body {
 
 header {
   font-family: Zain, sans-serif;
-  color: white; /* text color */  
+  color: gray; /* text color */ 
+  font-weight: normal;
 }
 
 /*
@@ -60,17 +61,19 @@ table {
 }
 
 #navbar ul li a:hover {
-  background-color: blue;
+  color: white;
+  font-weight: bolder;
 }
 
 .onpage {
-  background-color: blue;
   color: white;
+  font-weight: 500;
 }
 
 .grayedout {
   color: black;
   background-color: gray;
+  font-weight: lighter;
 }
 
 .menu {
@@ -82,6 +85,7 @@ table {
   height: 400px;
   z-index: 10;
   border: 2px solid black;
+  padding: 2px;
 }
   
 /*
