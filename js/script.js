@@ -1,83 +1,130 @@
 function init(){
     //alert("init called");
  }
-
+// deze functie zoomed in op de kaart en laat dan de details zien
 function zoomregioa() {
-  alert("clicked in window")
-  for (var i =0;  i< vakregio.length; ++i) {
-    if (markerlist[i].isPopupOpen()) {
-      var regiodetail = vakregio[i][3]
-      alert("regio selected is " + regiodetail)
+  //alert("clicked in window")
+  for (var i = 0;  i< vakregio.length; ++i) {
+    if (markerlista[i].isPopupOpen()) {
+      //deleten van de marker
+      var markerfound = markerlista[i];
+      console.log("markerfound :" + markerfound)
+      console.log("markerlist :" + markerlista[i])
+      mymap.removeLayer(markerfound); // werkt nu
+      var regiodetail = vakregio[i][3];
+      console.log("regio selected is " + regiodetail);
       //hier komt de loop over een specifiek regio, in eerste instantie alleen voor Canarische eilanden
       if (regiodetail = "Canarische eilanden") {
-        alert("in if statement")
-        //mymap.setView([28.683,-16.337], 8);
+        console.log("in if statement");
         mymap.setView([vakregio[i][0],vakregio[i][1]], vakregio[i][2]);  // deze regio
+        for (var j = 0; j < locaties.length; j++) {
+          if (locaties[j][3] = regiodetail) {
+            console.log("regiodetail" + regiodetail + ": " + locaties[j][2])
+            markerlistb[j].addTo(mymap).bindPopup(locaties[j][2]).openPopup(); //openPopup kan weg?
+            //markerB = L.marker([locaties[j][0], locaties[j][1]]).addTo(mymap).bindPopup(locaties[j][2]).openPopup(); //openPopup kan weg?
+          }
+        }
+      mymap.closePopup()  
       }
     }
     else {
-      console.log("popup niet open "+vakregio[i][3])
+      console.log("popup niet open " + vakregio[i][3])
+    }
+  }
+  console.log("event listener zoomregiob aangezet")
+  document.getElementById("map").addEventListener("click", zoomregiob); // wacht tot de gebruiker op een van de nieuwe markers klikt
+}
+
+function zoomregiob() {
+  console.log("in zoomregiob")
+  // laat een of meerdere foto zien die erbij horen
+  for (var i = 0;  i < locaties.length; ++i) {
+    console.log("aantal locaties: " + locaties.length)
+    console.log("checking [" + i + "]: " + markerlistb[i])
+    if (markerlistb[i].isPopupOpen()) {
+      console.log("popup [" + i + "]: open")
+      fotocode = locaties[i][8];
+      var IA = document.getElementById("imagearea");
+      console.log(IA);
+      IA.style.zIndex = "4";
+      document.getElementById("imagearea").style.zIndex = "4";
+      alttext = locaties[i][2] + ", " + locaties[i][5];
+      console.log(alttext);
+      IA.src = "/image/GHM.png";
+      let foto = document.createElement('img');
+      foto.src = "/image/GHM.png";
+      document.getElementById('imagearea').appendChild(img);
+      IA.innerHTML = alttext;
     }
   }
 }
-  /*//kijk welke popup open is
-  // Welke regio is popup open?
-  if(marker.isPopupOpen()) {
-  // do something
-  }
-  else {
-    // do nothing
-  }
-} */
+
+/*Data vakanties 
+formaat: (0)latitude, (1)langitude, (2)zoom, (3)regio*/
+const vakregio = [
+[28.276,  -16.9409,  10, "Canarische eilanden"], 
+[56.502,   -3.9220,   7, "Schotland"],
+[39.371,    2.7430,   9, "Mallorca"]
+];
+
+/*Data locaties 
+formaat: (0)latitude, (1)langitude, (2)plaatsnaam, (3)regio, (4)land, (5)jaartal, (6)maand, (7)fotocode */
+const locaties = [
+[28.35221,-16.835699, "Los Silos", "Canarische eilanden", "Spanje", 2025, "April", "TLS"],
+[28.28526,-16.43538 , "Guimar",    "Canarische eilanden", "Spanje", 2025, "April", "TGM"],
+[28.14428,-17.21317 , "Hermigua",  "Canarische eilanden", "Spanje", 2025, "April", "GHG"] ];
 
 //alert("js initialized");
+// initialisatie van de wereld map
+
 var mymap = L.map('map').setView([10.0,15.0], 3);  // hele wereld = geo:37.09,-0.53?z=3
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 19,
   attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(mymap);
 
-/*Data vakanties 
-formaat: 
-latitude, langitude, zoom, regio*/
-const vakregio = [
-[28.683,  -16.337,  9, "Canarische eilanden"],
-[56.502,  -3.9220,  7, "Schotland"],
-[39.371,   2.7430,  9, "Mallorca"]
-];
-
 var regionaam;
 var regiofound = "none";
 
-const markerlist = [];
-console.log(markerlist.length)
+const markerlista = [];
 for (var i = 0; i < vakregio.length; ++i) {
     regionaam="<p>"+vakregio[i][3]+"</p>";
     console.log(regionaam);
     markerA = L.marker([vakregio[i][0], vakregio[i][1]]).addTo(mymap).bindPopup(regionaam).openPopup();
-    console.log(markerA)
-    markerlist.push(markerA);
+    console.log("marker :" + markerA)
+    markerlista.push(markerA);
+}
+mymap.closePopup()
+console.log("length markerlist a: " + markerlista.length)
+
+var locatienaam;
+
+const markerlistb = [];
+for (var i = 0; i < locaties.length; ++i) {
+    locatienaam = "<p>" + locaties[i][2] + "</p>";
+    console.log(locatienaam);
+    markerB = L.marker([locaties[i][0], locaties[i][1]])//.addTo(mymap).bindPopup(locatienaam).openPopup();
+    console.log("marker :" + markerB);
+    markerlistb.push(markerB);
 }
 
-console.log(markerlist.length)
-
 mymap.closePopup()
-
-/*Data locaties 
-formaat: 
-latitude, langitude, plaatsnaam, regio, land, jaartal, maand */
-const locaties = [
-[28.35221,-16.835699, "Los Silos", "Canarische eilanden", "Spanje", 2025, "April"],
-[28.28526,-16.43538 , "Guimar",    "Canarische eilanden", "Spanje", 2025, "April"],
-[28.14428,-17.21317 , "Hermigua",  "Canarische eilanden", "Spanje", 2025, "April"] ];
+console.log("length markerlist b: " + markerlistb.length)
 
 
 
-// screen size
+/* screen size
 var w = window.innerWidth;
 var h = window.innerHeight;
-//alert("Browser width: " + w + ", height: " + h + ".")
-
+const navheight = 28+'px';
+const footerheight = 20+'px';
+//alert("Browser width: " + w + ", height: " + h + ".");
+  var el = document.getElementById("mymap");
+  if (el) {
+    el.style.height = h - navheight - footerheight;
+    el.style.width = w;
+      //el.style.height = ""+h+"px";
+    } */
 var popup = L.popup();
 
 function onMapClick(e) {
@@ -90,7 +137,8 @@ function onMapClick(e) {
 mymap.on('click', onMapClick);  
 
 
-window.addEventListener('load', init);
-document.getElementById("map").addEventListener("click", zoomregioa);
+window.addEventListener('load', init); // nog niet in gebruik
+
+document.getElementById("map").addEventListener("click", zoomregioa); // wacht tot de gebruiker op een marker klikt
 
 
