@@ -46,7 +46,7 @@ function zoomregiob() {
       fotocode = locaties[i][8];
       let fotoimage = document.getElementById("foto");
       console.log(fotoimage.scr);
-      fotoimage.style.zIndex = "4";
+      document.getElementById("imagearea").style.zIndex = "4";
       alttext = locaties[i][2] + ", " + locaties[i][5];
       console.log(alttext);
       fotoimage.src = "/image/GHM.png";
