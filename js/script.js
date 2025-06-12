@@ -44,17 +44,14 @@ function zoomregiob() {
     if (markerlistb[i].isPopupOpen()) {
       console.log("popup [" + i + "]: open")
       fotocode = locaties[i][8];
-      var IA = document.getElementById("imagearea");
-      console.log(IA);
-      IA.style.zIndex = "4";
-      document.getElementById("imagearea").style.zIndex = "4";
+      let fotoimage = document.getElementById("foto");
+      console.log(fotoimage.scr);
+      fotoimage.style.zIndex = "4";
       alttext = locaties[i][2] + ", " + locaties[i][5];
       console.log(alttext);
-      IA.src = "/image/GHM.png";
-      let foto = document.createElement('img');
-      foto.src = "/image/GHM.png";
-      document.getElementById('imagearea').appendChild(img);
-      IA.innerHTML = alttext;
+      fotoimage.src = "/image/GHM.png";
+      fotoimage.alt = alttext
+      //fotoimage.innerHTML = alttext;
     }
   }
 }
