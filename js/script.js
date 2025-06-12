@@ -42,18 +42,25 @@ function zoomregiob() {
     console.log("aantal locaties: " + locaties.length)
     console.log("checking [" + i + "]: " + markerlistb[i])
     if (markerlistb[i].isPopupOpen()) {
-      console.log("popup [" + i + "]: open")
+      console.log("popup [" + i + "]: open");
       fotocode = locaties[i][8];
+      // text bij foto
+      let fotoomschrijving = document.getElementById("fototext'");
+      alttext = locaties[i][2] + ", " + locaties[i][5];
+      console.log(alttext);
+      fotoomschrijving.innerHTML(alttext);
+      // juiste plaatje
       let fotoimage = document.getElementById("foto");
       console.log(fotoimage.scr);
+      fotoimage.src = "/image/GHM.png";
+      fotoimage.alt = alttext
+      // zichtbaar maken
       let imarea = document.getElementById("imagearea")
       console.log("z-index imagearea: ", imarea.style.zIndex)
       imarea.style.zIndex = "5";
       console.log("z-index imagearea: ", imarea.style.zIndex)
-      alttext = locaties[i][2] + ", " + locaties[i][5];
-      console.log(alttext);
-      fotoimage.src = "/image/GHM.png";
-      fotoimage.alt = alttext
+
+
       //fotoimage.innerHTML = alttext;
     }
   }

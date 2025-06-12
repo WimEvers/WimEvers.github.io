@@ -108,10 +108,10 @@ table {
 #imagearea {
   position: absolute;
   background: white;
-  width: 820px;
+  width: 800px;
   left: 20px;
-  top: 20px;
-  height: 800px;
+  top: 50px;
+  height: 620px;
   border: 1px solid black;
   padding: 1px;
   z-index: 2; /*achter de map */
