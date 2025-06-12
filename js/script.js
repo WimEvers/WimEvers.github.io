@@ -59,8 +59,6 @@ function zoomregiob() {
       console.log("z-index imagearea: ", imarea.style.zIndex)
       imarea.style.zIndex = "5";
       console.log("z-index imagearea: ", imarea.style.zIndex)
-
-
       //fotoimage.innerHTML = alttext;
     }
   }
