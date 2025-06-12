@@ -45,7 +45,7 @@ function zoomregiob() {
       console.log("popup [" + i + "]: open");
       fotocode = locaties[i][8];
       // text bij foto
-      let fotodes = document.getElementById("fototext'");
+      let fotodes = document.getElementById("fototext");
       alttext = locaties[i][2] + ", " + locaties[i][5];
       console.log(alttext);
       fotodes.innerHTML = alttext;
