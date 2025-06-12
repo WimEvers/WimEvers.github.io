@@ -45,10 +45,10 @@ function zoomregiob() {
       console.log("popup [" + i + "]: open");
       fotocode = locaties[i][8];
       // text bij foto
-      let fotoomschrijving = document.getElementById("fototext'");
+      let fotodes = document.getElementById("fototext'");
       alttext = locaties[i][2] + ", " + locaties[i][5];
       console.log(alttext);
-      fotoomschrijving.innerHTML(alttext);
+      fotodes.innerHTML = alttext;
       // juiste plaatje
       let fotoimage = document.getElementById("foto");
       console.log(fotoimage.scr);
