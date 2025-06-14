@@ -73,11 +73,11 @@ const vakregio = [
 ];
 
 /*Data locaties 
-formaat: (0)latitude, (1)langitude, (2)plaatsnaam, (3)regio, (4)land, (5)jaartal, (6)maand, (7)fotocode */
+formaat: (0)latitude, (1)langitude, (2)plaatsnaam, (3)regio, (4)land, (5)jaartal, (6)maand, (7)fotocode (8) icon*/
 const locaties = [
-[28.35221,-16.835699, "Los Silos", "Canarische eilanden", "Spanje", 2025, "April", "TLS"],
-[28.28526,-16.43538 , "Guimar",    "Canarische eilanden", "Spanje", 2025, "April", "TGM"],
-[28.14428,-17.21317 , "Hermigua",  "Canarische eilanden", "Spanje", 2025, "April", "GHG"] ];
+[28.35221,-16.835699, "Los Silos", "Canarische eilanden", "Spanje", 2025, "April", "TLS", "Hotel"],
+[28.28526,-16.43538 , "Guimar",    "Canarische eilanden", "Spanje", 2025, "April", "TGM", "Hotel"],
+[28.14428,-17.21317 , "Hermigua",  "Canarische eilanden", "Spanje", 2025, "April", "GHG", "Hotel"] ];
 
 //alert("js initialized");
 // initialisatie van de wereld map
