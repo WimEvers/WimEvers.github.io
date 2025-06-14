@@ -75,12 +75,20 @@ const vakregio = [
 /*Data locaties 
 formaat: (0)latitude, (1)langitude, (2)plaatsnaam, (3)regio, (4)land, (5)jaartal, (6)maand, (7)fotocode (8) icon*/
 const locaties = [
-[28.35221,-16.835699, "Los Silos", "Canarische eilanden", "Spanje", 2025, "April", "TLS", "Hotel"],
-[28.28526,-16.43538 , "Guimar",    "Canarische eilanden", "Spanje", 2025, "April", "TGM", "Hotel"],
-[28.14428,-17.21317 , "Hermigua",  "Canarische eilanden", "Spanje", 2025, "April", "GHG", "Hotel"] ];
+[28.35221,-16.835699, "Los Silos", "Canarische eilanden", "Spanje", 2025, "April", "TLS", "hotel"],
+[28.28526,-16.43538 , "Guimar",    "Canarische eilanden", "Spanje", 2025, "April", "TGM", "hotel"],
+[28.14428,-17.21317 , "Hermigua",  "Canarische eilanden", "Spanje", 2025, "April", "GHG", "hotel"] ];
 
 //alert("js initialized");
 // initialisatie van de wereld map
+
+// icons
+var hotelIcon = L.icon({
+    iconUrl: "/mapicons/hotel.png",
+    iconSize:     [38, 95], // size of the icon
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
 
 var mymap = L.map('map').setView([10.0,15.0], 3);  // hele wereld = geo:37.09,-0.53?z=3
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -95,7 +103,7 @@ const markerlista = [];
 for (var i = 0; i < vakregio.length; ++i) {
     regionaam="<p>"+vakregio[i][3]+"</p>";
     console.log(regionaam);
-    markerA = L.marker([vakregio[i][0], vakregio[i][1]]).addTo(mymap).bindPopup(regionaam).openPopup();
+    markerA = L.marker([vakregio[i][0], vakregio[i][1]], {icon: hotelIcon}).addTo(mymap).bindPopup(regionaam).openPopup();
     console.log("marker :" + markerA)
     markerlista.push(markerA);
 }
@@ -108,7 +116,9 @@ const markerlistb = [];
 for (var i = 0; i < locaties.length; ++i) {
     locatienaam = "<p>" + locaties[i][2] + "</p>";
     console.log(locatienaam);
-    markerB = L.marker([locaties[i][0], locaties[i][1]])//.addTo(mymap).bindPopup(locatienaam).openPopup();
+    iconType = locaties[i][8]+"Icon"
+    console.log(iconType)
+    markerB = L.marker([locaties[i][0], locaties[i][1]] {icon: iconType)//.addTo(mymap).bindPopup(locatienaam).openPopup();
     console.log("marker :" + markerB);
     markerlistb.push(markerB);
 }
