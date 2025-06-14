@@ -19,19 +19,19 @@ function zoomregioa() {
         mymap.setView([vakregio[i][0],vakregio[i][1]], vakregio[i][2]);  // deze regio
         for (var j = 0; j < locaties.length; j++) {
           if (locaties[j][3] = regiodetail) {
-            console.log("regiodetail" + regiodetail + ": " + locaties[j][2])
+            console.log("regiodetail" + regiodetail + ": " + locaties[j][2]);
             markerlistb[j].addTo(mymap).bindPopup(locaties[j][2]).openPopup(); //openPopup kan weg?
             //markerB = L.marker([locaties[j][0], locaties[j][1]]).addTo(mymap).bindPopup(locaties[j][2]).openPopup(); //openPopup kan weg?
           }
         }
-      mymap.closePopup()  
+      mymap.closePopup();
       }
     }
     else {
-      console.log("popup niet open " + vakregio[i][3])
+      console.log("popup niet open " + vakregio[i][3]);
     }
   }
-  console.log("event listener zoomregiob aangezet")
+  //console.log("event listener zoomregiob aangezet")
   document.getElementById("map").addEventListener("click", zoomregiob); // wacht tot de gebruiker op een van de nieuwe markers klikt
 }
 
@@ -102,9 +102,9 @@ var regiofound = "none";
 const markerlista = [];
 for (var i = 0; i < vakregio.length; ++i) {
     regionaam="<p>"+vakregio[i][3]+"</p>";
-    console.log(regionaam);
+    //console.log(regionaam);
     markerA = L.marker([vakregio[i][0], vakregio[i][1]], {icon: hotelIcon}).addTo(mymap).bindPopup(regionaam).openPopup();
-    console.log("marker :" + markerA)
+    //console.log("marker :" + markerA)
     markerlista.push(markerA);
 }
 mymap.closePopup()
@@ -114,12 +114,12 @@ var locatienaam;
 
 const markerlistb = [];
 for (var i = 0; i < locaties.length; ++i) {
-    locatienaam = "<p>" + locaties[i][2] + "</p>";
+    var locatienaam = "<p>" + locaties[i][2] + "</p>";
     console.log(locatienaam);
-    iconType = locaties[i][8]+"Icon"
-    console.log(iconType)
-    markerB = L.marker([locaties[i][0], locaties[i][1]] {icon: iconType)//.addTo(mymap).bindPopup(locatienaam).openPopup();
-    console.log("marker :" + markerB);
+    var iconType = locaties[i][8]+"Icon";
+    console.log("icontype: ", iconType);
+    markerB = L.marker([locaties[i][0], locaties[i][1]], {icon: hotelIcon});//.addTo(mymap).bindPopup(locatienaam).openPopup();
+    //console.log("marker :" + markerB);
     markerlistb.push(markerB);
 }
 
