@@ -118,6 +118,7 @@ table {
   margin: 1px 1px;
   cursor: pointer;
   float: right;
+  width: 50px;
 }
 
 #imagearea {
