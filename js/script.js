@@ -94,7 +94,7 @@ function toonAlleFotos(fotocode, i) {
     var image = new Image();
     var urlImage = 'image/' + fotocode + count + '.png';
     console.log("checking image " + urlImage)
-    image.src = url_image;
+    image.src = urlImage;
     if (image.width == 0) { fotofound = false  
       } 
     else { 
