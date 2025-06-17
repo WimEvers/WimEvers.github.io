@@ -90,10 +90,10 @@ function toonAlleFotos(fotocode, i) {
        //check aantal foto's
   var count = 0;
   fotofound = true;
-  var image = new Image();
   var urlImage;
   while (fotofound) {
     console.log(fotofound + " count: " + count);
+    var image = new Image();
     urlImage = 'image/' + fotocode + count + '.png';
     console.log("checking image " + urlImage);
     image.src = urlImage;
