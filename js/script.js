@@ -65,7 +65,7 @@ function zoomregiob() {
       // juiste plaatje
       let fotoimage = document.getElementById("foto");
       console.log(fotoimage.scr);
-      fotoimage.src = "image/GHM.png";
+      fotoimage.src = "image/GHM0.png";
       fotoimage.alt = alttext
       // zichtbaar maken
       let imarea = document.getElementById("imagearea")
@@ -90,7 +90,7 @@ var hotelIcon = L.icon({
     iconUrl: "mapicons/hotel.png",
     iconSize:     [38, 44], // size of the icon
     iconAnchor:   [19, 44], // point of the icon which will correspond to marker's location
-    popupAnchor:  [0, -50] // point from which the popup should open relative to the iconAnchor
+    popupAnchor:  [0, 76] // point from which the popup should open relative to the iconAnchor
 });
 
 L.marker([51.5, -0.09], {icon: hotelIcon}).addTo(mymap);
