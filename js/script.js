@@ -28,11 +28,11 @@ function zoomregioa() {
               default:
                 markerlistb[j].addTo(mymap).bindPopup(locaties[j][2]).openPopup(); //openPopup kan weg?
             }         
-          }
-        }
+          } // end if
+        } //end for loop
       mymap.closePopup();
-      }
-    }
+      } // end if
+    } // end if
     else {
       console.log("popup niet open " + vakregio[i][3]);
     }
@@ -82,7 +82,7 @@ function toonAlleFotos(fotocode, i) {
   }
   count = count - 1; // de laatste foto was er niet
   // als count niet nul is moeten de button next en previous er komen
-  console.log("er zijn " + count + "fotos bij fotocode " + fotocode)
+  console.log("er zijn " + count + " fotos bij fotocode " + fotocode)
   let vakantiePlaatsJaar = document.getElementById("fototext");
   alttext = locaties[i][2] + ", " + locaties[i][5];
   console.log(alttext);
