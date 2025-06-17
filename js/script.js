@@ -20,7 +20,25 @@ function zoomregioa() {
         for (var j = 0; j < locaties.length; j++) {
           if (locaties[j][3] = regiodetail) {
             console.log("regiodetail" + regiodetail + ": " + locaties[j][2]);
+            markerlistb[j].setIcon(hotelIcon); //hier juiste icon type neerzetten
             markerlistb[j].addTo(mymap).bindPopup(locaties[j][2]).openPopup(); //openPopup kan weg?
+            // nu markers genereren pas, icontype gaat niet mee of
+            //var myIconReplc = L.Icon.extend({
+              //options: {
+        //iconUrl: "../resources/img/map/icons/orange/ambulance.png",
+        //iconSize: [30,35],
+        //shadowUrl: "../resources/img/map/icons/shadow.png",
+        //shadowAnchor: [8, 20],
+        //shadowSize: [25, 18],
+        //iconSize: [20, 25],
+        //iconAnchor: [8, 30] // horizontal puis vertical
+    //}
+//});
+//
+//layer.on('click', function (e) {
+   //e.target.setIcon(new myIconReplc);
+//});
+            //  e.target.setIcon(new myIconReplc);
             //markerB = L.marker([locaties[j][0], locaties[j][1]]).addTo(mymap).bindPopup(locaties[j][2]).openPopup(); //openPopup kan weg?
           }
         }
@@ -63,34 +81,45 @@ function zoomregiob() {
     }
   }
 }
+// initialisatie van de wereld map
+
+var mymap = L.map('map').setView([10.0,15.0], 3);  // hele wereld = geo:37.09,-0.53?z=3
+
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 19,
+  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(mymap);
+  
 // icons
 var hotelIcon = L.icon({
-    iconUrl: "/mapicons/hotel.png",
-    iconSize:     [38, 95], // size of the icon
-    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+    iconUrl: "mapicons/hotel.png",
+    iconSize:     [38, 44], // size of the icon
+    iconAnchor:   [19, 44], // point of the icon which will correspond to marker's location
+    popupAnchor:  [0, 76] // point from which the popup should open relative to the iconAnchor
 });
-console.log(|icons defined")
+
+L.marker([51.5, -0.09], {icon: hotelIcon}).addTo(mymap);
+console.log("icons defined");
 
 /*Data vakanties 
 formaat: (0)latitude, (1)langitude, (2)zoom, (3)regio*/
 const vakregio = [
 [28.276,  -16.9409,  10, "Canarische eilanden"], 
 [56.502,   -3.9220,   7, "Schotland"],
-[39.371,    2.7430,   9, "Mallorca"]
-];
+[39.371,    2.7430,   9, "Mallorca"]];
 
 var regionaam;
 var regiofound = "none";
 const markerlista = [];
 for (var i = 0; i < vakregio.length; ++i) {
     regionaam="<p>"+vakregio[i][3]+"</p>";
-    //console.log(regionaam);
-    markerA = L.marker([vakregio[i][0], vakregio[i][1]], {icon: hotelIcon}).addTo(mymap).bindPopup(regionaam).openPopup();
-    //console.log("marker :" + markerA)
+    console.log(regionaam);
+    markerA = L.marker([vakregio[i][0], vakregio[i][1]]).addTo(mymap).bindPopup(regionaam).openPopup();
+    console.log("marker A:" + markerA);
     markerlista.push(markerA);
 };
-console.log("markerlist a defined");
+mymap.closePopup()
+console.log("markerlist a defined "+markerlista.length+" items");
 
 /*Data locaties 
 formaat: (0)latitude, (1)langitude, (2)plaatsnaam, (3)regio, (4)land, (5)jaartal, (6)maand, (7)fotocode (8) icon*/
@@ -105,41 +134,17 @@ for (var i = 0; i < locaties.length; ++i) {
     console.log(locatienaam);
     var iconType = locaties[i][8]+"Icon";
     console.log("icontype: ", iconType);
-    markerB = L.marker([locaties[i][0], locaties[i][1]], {icon: hotelIcon});//.addTo(mymap).bindPopup(locatienaam).openPopup();
-    //console.log("marker :" + markerB);
+    switch (locaties[i][8]) {
+      case "hotel":
+        markerB = L.marker([locaties[i][0], locaties[i][1]], {icon: hotelIcon});//.addTo(mymap).bindPopup(locatienaam).openPopup();
+        console.log("hotelIcon bij: ", locaties[i][2]);
+      default:
+        markerB = L.marker([locaties[i][0], locaties[i][1]]); //no custom icon
+    }
     markerlistb.push(markerB);
 };
-console.log("markerlist a defined");
-//alert("js initialized");
-// initialisatie van de wereld map
-
-
-
-var mymap = L.map('map').setView([10.0,15.0], 3);  // hele wereld = geo:37.09,-0.53?z=3
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  maxZoom: 19,
-  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-  }).addTo(mymap);
-
-
-}
 mymap.closePopup()
-console.log("length markerlist a: " + markerlista.length)
-
-
-const markerlistb = [];
-for (var i = 0; i < locaties.length; ++i) {
-    var locatienaam = "<p>" + locaties[i][2] + "</p>";
-    console.log(locatienaam);
-    var iconType = locaties[i][8]+"Icon";
-    console.log("icontype: ", iconType);
-    markerB = L.marker([locaties[i][0], locaties[i][1]], {icon: hotelIcon});//.addTo(mymap).bindPopup(locatienaam).openPopup();
-    //console.log("marker :" + markerB);
-    markerlistb.push(markerB);
-}
-
-mymap.closePopup()
-console.log("length markerlist b: " + markerlistb.length)
+console.log("markerlist b defined "+markerlistb.length+" items");
 
 
 
@@ -155,6 +160,7 @@ const footerheight = 20+'px';
     el.style.width = w;
       //el.style.height = ""+h+"px";
     } */
+    
 var popup = L.popup();
 
 function onMapClick(e) {
