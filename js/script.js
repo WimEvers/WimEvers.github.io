@@ -20,26 +20,14 @@ function zoomregioa() {
         for (var j = 0; j < locaties.length; j++) {
           if (locaties[j][3] = regiodetail) {
             console.log("regiodetail" + regiodetail + ": " + locaties[j][2]);
-            markerlistb[j].setIcon(hotelIcon); //hier juiste icon type neerzetten
-            markerlistb[j].addTo(mymap).bindPopup(locaties[j][2]).openPopup(); //openPopup kan weg?
-            // nu markers genereren pas, icontype gaat niet mee of
-            //var myIconReplc = L.Icon.extend({
-              //options: {
-        //iconUrl: "../resources/img/map/icons/orange/ambulance.png",
-        //iconSize: [30,35],
-        //shadowUrl: "../resources/img/map/icons/shadow.png",
-        //shadowAnchor: [8, 20],
-        //shadowSize: [25, 18],
-        //iconSize: [20, 25],
-        //iconAnchor: [8, 30] // horizontal puis vertical
-    //}
-//});
-//
-//layer.on('click', function (e) {
-   //e.target.setIcon(new myIconReplc);
-//});
-            //  e.target.setIcon(new myIconReplc);
-            //markerB = L.marker([locaties[j][0], locaties[j][1]]).addTo(mymap).bindPopup(locaties[j][2]).openPopup(); //openPopup kan weg?
+            switch (locaties[j][8]) {
+              case "hotel":
+                markerlistb[j].setIcon(hotelIcon); //hier juiste icon type neerzetten
+                markerlistb[j].addTo(mymap).bindPopup(locaties[j][2]).openPopup(); //openPopup kan weg?
+                console.log("hotelIcon bij: ", locaties[i][2]);
+              default:
+                markerlistb[j].addTo(mymap).bindPopup(locaties[j][2]).openPopup(); //openPopup kan weg?
+            }         
           }
         }
       mymap.closePopup();
@@ -62,11 +50,18 @@ function zoomregiob() {
     if (markerlistb[i].isPopupOpen()) {
       console.log("popup [" + i + "]: open");
       fotocode = locaties[i][8];
-      // text bij foto
-      let fotodes = document.getElementById("fototext");
+      // teksten bij foto
+      // boven Vakantieplaats en Jaar
+      // onder omschrijving van de foto
+      let vakantiePlaatsJaar = document.getElementById("fototext");
       alttext = locaties[i][2] + ", " + locaties[i][5];
       console.log(alttext);
-      fotodes.innerHTML = alttext;
+      vakantiePlaatsJaar.innerHTML = alttext;
+      let  fotoBeschrijving = document.getElementById("onderschrift");
+      // TODO fotobeschrijving uit filenaam halen
+      alttext = locaties[i][2] + ", " + locaties[i][5];
+      console.log(alttext);
+     fotoBeschrijving.innerHTML = alttext;
       // juiste plaatje
       let fotoimage = document.getElementById("foto");
       console.log(fotoimage.scr);
@@ -95,7 +90,7 @@ var hotelIcon = L.icon({
     iconUrl: "mapicons/hotel.png",
     iconSize:     [38, 44], // size of the icon
     iconAnchor:   [19, 44], // point of the icon which will correspond to marker's location
-    popupAnchor:  [0, 76] // point from which the popup should open relative to the iconAnchor
+    popupAnchor:  [0, -50] // point from which the popup should open relative to the iconAnchor
 });
 
 L.marker([51.5, -0.09], {icon: hotelIcon}).addTo(mymap);
@@ -132,18 +127,10 @@ const markerlistb = [];
 for (var i = 0; i < locaties.length; ++i) {
     var locatienaam = "<p>" + locaties[i][2] + "</p>";
     console.log(locatienaam);
-    var iconType = locaties[i][8]+"Icon";
-    console.log("icontype: ", iconType);
-    switch (locaties[i][8]) {
-      case "hotel":
-        markerB = L.marker([locaties[i][0], locaties[i][1]], {icon: hotelIcon});//.addTo(mymap).bindPopup(locatienaam).openPopup();
-        console.log("hotelIcon bij: ", locaties[i][2]);
-      default:
-        markerB = L.marker([locaties[i][0], locaties[i][1]]); //no custom icon
-    }
+    markerB = L.marker([locaties[i][0], locaties[i][1]]);//.addTo(mymap).bindPopup(locatienaam).openPopup();
     markerlistb.push(markerB);
 };
-mymap.closePopup()
+mymap.closePopup() // is dit nog nodig
 console.log("markerlist b defined "+markerlistb.length+" items");
 
 
@@ -169,12 +156,10 @@ function onMapClick(e) {
         .setContent("You clicked the map at " + e.sourceTarget.toString())
         .openOn(mymap);
 }
+// eventlisteners aanzetten
 
 mymap.on('click', onMapClick);  
-
-
 window.addEventListener('load', init); // nog niet in gebruik
-
-document.getElementById("map").addEventListener("click", zoomregioa); // wacht tot de gebruiker op een marker klikt
+document.getElementById("map").addEventListener("click", zoomregioa); // wacht tot de gebruiker op een marker klikt in de map-area
 
 

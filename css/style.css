@@ -123,9 +123,16 @@ table {
 }
 
 #fototext {
+  position: absolute;
   top: 0px;
   height: 20px;
-  font-size: 10px;
+  font-size: 12px;
+}
+#onderschrift{
+  position: absolute;
+  bottom: 0px;
+  height: 20px;
+  font-size: 12px;
 }
 /*
 .image {
