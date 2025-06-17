@@ -50,41 +50,10 @@ function zoomregiob() {
       console.log("popup [" + i + "]: open");
       fotocode = locaties[i][7];
       toonAlleFotos(fotocode, i)
- /*
-      // teksten bij foto
-      // boven Vakantieplaats en Jaar
-      // onder omschrijving van de foto
-      let vakantiePlaatsJaar = document.getElementById("fototext");
-      alttext = locaties[i][2] + ", " + locaties[i][5];
-      console.log(alttext);
-      vakantiePlaatsJaar.innerHTML = alttext;
-      let  fotoBeschrijving = document.getElementById("onderschrift");
-      // TODO fotobeschrijving uit filenaam halen
-      alttext = locaties[i][2] + ", " + locaties[i][5];
-      console.log(alttext);
-     fotoBeschrijving.innerHTML = alttext;
-      // juiste plaatje
-      let fotoimage = document.getElementById("foto");
-      console.log(fotoimage.scr);
-      fotoimage.src = "image/GHG0.png";
-      fotoimage.alt = alttext
-      // zichtbaar maken
-      let imarea = document.getElementById("imagearea")
-      //console.log("z-index imagearea: ", imarea.style.zIndex)
-      imarea.style.zIndex = "5";
-      //console.log("z-index imagearea: ", imarea.style.zIndex)
-      */
     }
   }
 }
-//
-/**
-* Checking if an image exist in your image folder
-*/
-let loadImage = function(variable, count){
 
- }
- 
 function toonAlleFotos(fotocode, i) {
   console.log("alle foto's bij fotocode :" + fotocode + " locatie element: " + i)
        //check aantal foto's
@@ -112,13 +81,14 @@ function toonAlleFotos(fotocode, i) {
     }
   }
   count = count - 1; // de laatste foto was er niet
+  // als count niet nul is moeten de button next en previous er komen
   console.log("er zijn " + count + "fotos bij fotocode " + fotocode)
   let vakantiePlaatsJaar = document.getElementById("fototext");
   alttext = locaties[i][2] + ", " + locaties[i][5];
   console.log(alttext);
   vakantiePlaatsJaar.innerHTML = alttext;
   let  fotoBeschrijving = document.getElementById("onderschrift");
-  // TODO fotobeschrijving uit filenaam halen
+  // TODO fotobeschrijving uit filenaam halen, wordt moeilijk
   alttext = locaties[i][2] + ", " + locaties[i][5];
   console.log(alttext);
   fotoBeschrijving.innerHTML = alttext;
@@ -130,9 +100,7 @@ function toonAlleFotos(fotocode, i) {
   console.log(fotoimage.scr);
   // zichtbaar maken
   let imarea = document.getElementById("imagearea")
-  //console.log("z-index imagearea: ", imarea.style.zIndex)
   imarea.style.zIndex = "5";
-  //console.log("z-index imagearea: ", imarea.style.zIndex)
 }
  
 // functies bij de foto buttons
