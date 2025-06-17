@@ -40,16 +40,17 @@ function zoomregioa() {
   //console.log("event listener zoomregiob aangezet")
   document.getElementById("map").addEventListener("click", zoomregiob); // wacht tot de gebruiker op een van de nieuwe markers klikt
 }
-
-function zoomregiob() {
+ // laat een of meerdere foto zien die erbij horen
+function zoomregiob() { 
   console.log("in zoomregiob")
-  // laat een of meerdere foto zien die erbij horen
   for (var i = 0;  i < locaties.length; ++i) {
     console.log("aantal locaties: " + locaties.length)
     console.log("checking [" + i + "]: " + markerlistb[i])
     if (markerlistb[i].isPopupOpen()) {
       console.log("popup [" + i + "]: open");
-      fotocode = locaties[i][8];
+      fotocode = locaties[i][7];
+      toonAlleFotos(fotocode, i)
+ /*
       // teksten bij foto
       // boven Vakantieplaats en Jaar
       // onder omschrijving van de foto
@@ -65,17 +66,81 @@ function zoomregiob() {
       // juiste plaatje
       let fotoimage = document.getElementById("foto");
       console.log(fotoimage.scr);
-      fotoimage.src = "image/GHM0.png";
+      fotoimage.src = "image/GHG0.png";
       fotoimage.alt = alttext
       // zichtbaar maken
       let imarea = document.getElementById("imagearea")
-      console.log("z-index imagearea: ", imarea.style.zIndex)
+      //console.log("z-index imagearea: ", imarea.style.zIndex)
       imarea.style.zIndex = "5";
-      console.log("z-index imagearea: ", imarea.style.zIndex)
-      //fotoimage.innerHTML = alttext;
+      //console.log("z-index imagearea: ", imarea.style.zIndex)
+      */
     }
   }
 }
+//
+/**
+* Checking if an image exist in your image folder
+*/
+let loadImage = function(variable, count){
+
+ }
+ 
+function toonAlleFotos(fotocode, i) {
+  console.log("alle foto's bij fotocode :" + fotocode + " locatie element: " + i)
+       //check aantal foto's
+  var count = 0;
+  fotofound = true;
+  while (fotofound) {
+    var image = new Image();
+    var urlImage = 'image/' + fotocode + count + '.png';
+    console.log("checking image " + urlImage)
+    image.src = url_image;
+    if (image.width == 0) { fotofound = false  
+      } 
+    else { 
+      fotofound = true; 
+      console.log("image " + urlImage + " found")
+      }
+    count = count + 1;
+    if (count = 5) {fotofound = false}
+  }
+  count = count - 1; // de laatste foto was er niet
+  console.log("er zijn " + count + "fotos bij fotocode " + fotocode)
+  let vakantiePlaatsJaar = document.getElementById("fototext");
+  alttext = locaties[i][2] + ", " + locaties[i][5];
+  console.log(alttext);
+  vakantiePlaatsJaar.innerHTML = alttext;
+  let  fotoBeschrijving = document.getElementById("onderschrift");
+  // TODO fotobeschrijving uit filenaam halen
+  alttext = locaties[i][2] + ", " + locaties[i][5];
+  console.log(alttext);
+  fotoBeschrijving.innerHTML = alttext;
+  // juiste plaatje
+  let fotoimage = document.getElementById("foto");
+  console.log(fotoimage.scr);
+  fotoimage.src = "image/" + fotocode + 0 +".png";
+  fotoimage.alt = alttext
+  console.log(fotoimage.scr);
+  // zichtbaar maken
+  let imarea = document.getElementById("imagearea")
+  //console.log("z-index imagearea: ", imarea.style.zIndex)
+  imarea.style.zIndex = "5";
+  //console.log("z-index imagearea: ", imarea.style.zIndex)
+}
+ 
+// functies bij de foto buttons
+function stop() {
+  let imarea = document.getElementById("imagearea")
+  imarea.style.zIndex = "2";
+  mymap.closePopup();
+}
+
+function volgende() {
+}
+
+function vorige () {
+}
+
 // initialisatie van de wereld map
 
 var mymap = L.map('map').setView([10.0,15.0], 3);  // hele wereld = geo:37.09,-0.53?z=3
@@ -90,7 +155,7 @@ var hotelIcon = L.icon({
     iconUrl: "mapicons/hotel.png",
     iconSize:     [38, 44], // size of the icon
     iconAnchor:   [19, 44], // point of the icon which will correspond to marker's location
-    popupAnchor:  [0, 76] // point from which the popup should open relative to the iconAnchor
+    popupAnchor:  [0, -50] // point from which the popup should open relative to the iconAnchor
 });
 
 L.marker([51.5, -0.09], {icon: hotelIcon}).addTo(mymap);

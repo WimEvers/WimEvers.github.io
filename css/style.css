@@ -105,13 +105,28 @@ table {
   padding: 2px;
 }
 
+.button {
+  border-color: black;
+  border-width: 1px;
+  color: black;
+  padding: 1px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  height: 34px;
+  margin: 1px 1px;
+  cursor: pointer;
+  float: right;
+}
+
 #imagearea {
   position: absolute;
   background: white;
   width: 804px;/* 1px border, 800px foto, 1px border*/
   left: 30px;
   top: 50px;
-  height: 644px; /* 1px border 20px header, 600px foto, 20px footer 1px border*/
+  height: 684px; /* 1px border 1px padding 40px header, 600px foto, 40px footer 1px padding 1px border*/
   border: 1px solid black;
   padding: 1px;
   z-index: 2; /*achter de map */
@@ -119,20 +134,20 @@ table {
 
 #foto {
   position: absolute;
-  top: 20px;
+  top: 40px;
 }
 
 #fototext {
   position: absolute;
   top: 0px;
-  height: 20px;
-  font-size: 12px;
+  height: 40px;
+  font-size: 20px;
 }
-#onderschrift{
+#onderschrift {
   position: absolute;
   bottom: 0px;
-  height: 20px;
-  font-size: 12px;
+  height: 40px;
+  font-size: 20px;
 }
 /*
 .image {
