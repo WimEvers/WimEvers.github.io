@@ -165,7 +165,6 @@ var hotelIcon = L.icon({
     popupAnchor:  [0, -50] // point from which the popup should open relative to the iconAnchor
 });
 
-L.marker([51.5, -0.09], {icon: hotelIcon}).addTo(mymap);
 console.log("icons defined");
 
 /*Data vakanties 
