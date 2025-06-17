@@ -70,7 +70,7 @@ function zoomregiob() {
       // juiste plaatje
       let fotoimage = document.getElementById("foto");
       console.log(fotoimage.scr);
-      fotoimage.src = "/image/GHM.png";
+      fotoimage.src = "image/GHM.png";
       fotoimage.alt = alttext
       // zichtbaar maken
       let imarea = document.getElementById("imagearea")
