@@ -107,7 +107,9 @@ function toonAlleFotos(fotocode, i) {
       console.log("image " + urlImage + " found");
       }
     count = count + 1;
-    if (count == 5) {fotofound = false;}
+    if (count == 5) {
+      fotofound = false;
+    }
   }
   count = count - 1; // de laatste foto was er niet
   console.log("er zijn " + count + "fotos bij fotocode " + fotocode)
