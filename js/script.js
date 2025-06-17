@@ -91,12 +91,13 @@ function toonAlleFotos(fotocode, i) {
   var count = 0;
   fotofound = true;
   var image = new Image();
+  var urlImage;
   while (fotofound) {
     console.log(fotofound + " count: " + count);
-    var urlImage = 'image/' + fotocode + count + '.png';
-    console.log("checking image " + urlImage)
+    urlImage = 'image/' + fotocode + count + '.png';
+    console.log("checking image " + urlImage);
     image.src = urlImage;
-    console.log("image " + urlImage + " width " + image.width)
+    console.log("image " + urlImage + " width " + image.width);
     if (image.width == 0) { 
       fotofound = false;
       console.log("image " + urlImage + " not found");
