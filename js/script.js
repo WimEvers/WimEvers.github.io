@@ -90,19 +90,23 @@ function toonAlleFotos(fotocode, i) {
        //check aantal foto's
   var count = 0;
   fotofound = true;
+  var image = new Image();
   while (fotofound) {
-    var image = new Image();
+    console.log(fotofound + " count: " + count);
     var urlImage = 'image/' + fotocode + count + '.png';
     console.log("checking image " + urlImage)
     image.src = urlImage;
-    if (image.width == 0) { fotofound = false  
+    console.log("image " + urlImage + " width " + image.width)
+    if (image.width == 0) { 
+      fotofound = false;
+      console.log("image " + urlImage + " not found");
       } 
     else { 
       fotofound = true; 
-      console.log("image " + urlImage + " found")
+      console.log("image " + urlImage + " found");
       }
     count = count + 1;
-    if (count = 5) {fotofound = false}
+    if (count = 5) {fotofound = false;}
   }
   count = count - 1; // de laatste foto was er niet
   console.log("er zijn " + count + "fotos bij fotocode " + fotocode)
