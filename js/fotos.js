@@ -5,7 +5,8 @@
 const fotoAantal = [
 ["GHG", 2],
 ["THM", 0],
-["TLS", 0] ];
+["TLS", 0],
+["WAG", 0] ];
 // fotoTekst; de beschrijving bij elke foto
 // (0) fotonaam (=filename) (1) Omschrijving
 const fotoText = [
