@@ -10,4 +10,4 @@ const fotoAantal = [
 // (0) fotonaam (=filename) (1) Omschrijving
 const fotoText = [
 ["GHG0", "Hotel Apartamentos Los Telares"],
-["GHG1", "Uitzicht vanaf ons balkon"] ]
+["GHG1", "Uitzicht vanaf ons balkon"] ];
