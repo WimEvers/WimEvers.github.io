@@ -20,8 +20,8 @@ function zoomregioa() {
         for (var j = 0; j < locaties.length; j++) {
           if (locaties[j][3] = regiodetail) {
             console.log("regiodetail" + regiodetail + ": " + locaties[j][2]);
+            console.log("icon type: ", locaties[j][8])
             switch (locaties[j][8]) {
-              console.log("icon type: ", locaties[j][8])
               case "hotel":
                 markerlistb[j].setIcon(hotelIcon); //hier juiste icon type neerzetten
                 markerlistb[j].addTo(mymap).bindPopup(locaties[j][2]).openPopup(); //openPopup kan weg?
