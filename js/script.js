@@ -27,10 +27,12 @@ function zoomregioa() {
                 markerlistb[j].setIcon(hotelIcon); //hier juiste icon type neerzetten
                 markerlistb[j].addTo(mymap).bindPopup(locaties[j][2]).openPopup(); //openPopup kan weg?
                 console.log("hotelIcon bij: ", locaties[i][2]);
+                break;
               case "hiking":
                 markerlistb[j].setIcon(hikingIcon); //hier juiste icon type neerzetten
                 markerlistb[j].addTo(mymap).bindPopup(locaties[j][2]).openPopup(); //openPopup kan weg?
-                console.log("hikingIcon bij: ", locaties[i][2]);              
+                console.log("hikingIcon bij: ", locaties[i][2]);
+                break;                
               default:
                 markerlistb[j].addTo(mymap).bindPopup(locaties[j][2]).openPopup(); //openPopup kan weg?
             }         
