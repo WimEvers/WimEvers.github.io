@@ -21,6 +21,7 @@ function zoomregioa() {
           if (locaties[j][3] = regiodetail) {
             console.log("regiodetail" + regiodetail + ": " + locaties[j][2]);
             switch (locaties[j][8]) {
+              console.log("icon type: ", locaties[j][8])
               case "hotel":
                 markerlistb[j].setIcon(hotelIcon); //hier juiste icon type neerzetten
                 markerlistb[j].addTo(mymap).bindPopup(locaties[j][2]).openPopup(); //openPopup kan weg?
@@ -167,9 +168,9 @@ console.log("markerlist a defined "+markerlista.length+" items");
 /*Data locaties 
 formaat: (0)latitude, (1)langitude, (2)plaatsnaam, (3)regio, (4)land, (5)jaartal, (6)maand, (7)fotocode (8) icon*/
 const locaties = [
-[28.35221,  -16.835699, "Los Silos", "Canarische eilanden", "Spanje", 2025, "April", "TLS", "hotel"],
-[28.28526,  -16.43538 , "Guimar", "Canarische eilanden", "Spanje", 2025, "April", "TGM", "hotel"],
-[28.14428,  -17.21317 , "Hermigua", "Canarische eilanden", "Spanje", 2025, "April", "GHG", "hotel"],
+[28.35221,  -16.835699, "Los Silos",            "Canarische eilanden", "Spanje", 2025, "April", "TLS", "hotel"],
+[28.28526,  -16.43538 , "Guimar",               "Canarische eilanden", "Spanje", 2025, "April", "TGM", "hotel"],
+[28.14428,  -17.21317 , "Hermigua",             "Canarische eilanden", "Spanje", 2025, "April", "GHG", "hotel"],
 [28.185232, -17.200588, "Camino de los Pasos",  "Canarische eilanden", "Spanje", 2025, "April", "WAG", "hiking"] ]
 
 const markerlistb = [];
