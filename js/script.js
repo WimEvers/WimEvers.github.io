@@ -132,7 +132,12 @@ var hotelIcon = L.icon({
     iconAnchor:   [19, 44], // point of the icon which will correspond to marker's location
     popupAnchor:  [0, -50] // point from which the popup should open relative to the iconAnchor
 });
-
+var hikingIcon = L.icon({
+    iconUrl: "mapicons/hiking.png",
+    iconSize:     [38, 44], // size of the icon
+    iconAnchor:   [19, 44], // point of the icon which will correspond to marker's location
+    popupAnchor:  [0, -50] // point from which the popup should open relative to the iconAnchor
+});
 console.log("icons defined");
 
 /*Data vakanties 
@@ -158,9 +163,10 @@ console.log("markerlist a defined "+markerlista.length+" items");
 /*Data locaties 
 formaat: (0)latitude, (1)langitude, (2)plaatsnaam, (3)regio, (4)land, (5)jaartal, (6)maand, (7)fotocode (8) icon*/
 const locaties = [
-[28.35221,-16.835699, "Los Silos", "Canarische eilanden", "Spanje", 2025, "April", "TLS", "hotel"],
-[28.28526,-16.43538 , "Guimar",    "Canarische eilanden", "Spanje", 2025, "April", "TGM", "hotel"],
-[28.14428,-17.21317 , "Hermigua",  "Canarische eilanden", "Spanje", 2025, "April", "GHG", "hotel"] ];
+[28.35221,  -16.835699, "Los Silos", "Canarische eilanden", "Spanje", 2025, "April", "TLS", "hotel"],
+[28.28526,  -16.43538 , "Guimar", "Canarische eilanden", "Spanje", 2025, "April", "TGM", "hotel"],
+[28.14428,  -17.21317 , "Hermigua", "Canarische eilanden", "Spanje", 2025, "April", "GHG", "hotel"],
+[28.185232, -17.200588, "Camino de los Pasos",  "Canarische eilanden", "Spanje", 2025, "April", "WAG", "hiking"] ]
 
 const markerlistb = [];
 for (var i = 0; i < locaties.length; ++i) {
