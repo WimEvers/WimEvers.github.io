@@ -68,8 +68,8 @@ function toonAlleFotos(fotocode, i) {
   var count = 0;
   fotofound = true;
   var urlImage;
-  console.log(fotoAantal.indexOf(fotocode))
-  console.log("aantal foto's: ",fotoaantal[fotoAantal.indexOf(fotocode)][1])
+  console.log(fotoAantal.indexOf(fotocode));
+  console.log("aantal foto's: ",fotoaantal[fotoAantal.indexOf(fotocode)][1]);
   while (fotofound) {
     console.log(fotofound + " count: " + count);
     var image = new Image();
