@@ -70,9 +70,9 @@ function toonAlleFotos(fotocode, i) {
   // bepalen aantal fotos bij fotocode (indexOf werkt niet bij 2D array)
   var index;
   var count; //number van de foto to moet worden gezien
-  for (var i = 0; i < fotoAantal.length; i++) {
-    if (fotoAantal[i][0] == fotocode) {
-      index = i;
+  for (var jj = 0; jj < fotoAantal.length; jj++) {
+    if (fotoAantal[jj][0] == fotocode) {
+      index = jj;
     break;
     }
   }
@@ -109,6 +109,7 @@ function toonAlleFotos(fotocode, i) {
 }
  
 // functies bij de foto buttons
+
 function stop() // venster met fotos sluiten
 {
   let imarea = document.getElementById("imagearea")
@@ -116,14 +117,15 @@ function stop() // venster met fotos sluiten
   mymap.closePopup();
 }
 
-function next(count, i ,(fotosum - 1)) // foto 'pic' + 1 tonen
+function next(count, i) // volgende foto tonen
 {
-  if (count != max) {
+  console.log("next - count = ",count," i = ",i)
+  if (count >= fotoSum - 1) {
   count = count + 1;
   showFoto(count, i)
   }
 }
-function prev(count, i) // foto 'pic' - 1 tonen
+function prev(count, i) // vorige foto tonen
 {
   if(count > 0) {
   count = count - 1;
