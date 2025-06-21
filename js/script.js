@@ -116,7 +116,7 @@ function stop() // venster met fotos sluiten
   mymap.closePopup();
 }
 
-function next(count, i ,fotosum - 1) // foto 'pic' + 1 tonen
+function next(count, i ,(fotosum - 1)) // foto 'pic' + 1 tonen
 {
   if (count != max) {
   count = count + 1;
