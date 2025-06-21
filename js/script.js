@@ -88,6 +88,7 @@ function toonAlleFotos(fotocode, i) {
     buttonStop = document.getElementById("stop");
     buttonStop.style.display = "block"
     count = 0;
+    buttonStop.addEventListener("click",stop());
     if (fotoSum > 1) {
       let  fotoBeschrijving = document.getElementById("onderschrift");
   // TODO fotobeschrijving uit array fototext halen
@@ -100,11 +101,13 @@ function toonAlleFotos(fotocode, i) {
       let imarea = document.getElementById("imagearea")
       imarea.style.zIndex = "5";
     }
-    // er zijn meer dan 1 fotos, 2 buttons toevoegen
+    // er zijn meer dan 1 fotos, 2 buttons zichtbaar maken
     let buttonPrev = document.getElementById("prev");
     buttonPrev.style.display = "block";
+    buttonPrev.addEventListener("click", prev(count, i)
     let buttonNext = document.getElementById("next");
     buttonNext.style.display = "block";
+    buttonnext.addEventListener("click", next(count, i)
   }
 }
  
