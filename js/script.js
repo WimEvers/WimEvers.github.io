@@ -116,13 +116,14 @@ function stop() // venster met fotos sluiten
   mymap.closePopup();
 }
 
-function next(count, i ,max) // foto 'pic' + 1 tonene
+function next(count, i ,max) // foto 'pic' + 1 tonen
 {
   if (count != max) {
   count = count + 1;
   showFoto(count, i)
+  }
 }
-function prev(count, i) // foto 'pic' - 1 tonene
+function prev(count, i) // foto 'pic' - 1 tonen
 {
   if(count > 0) {
   count = count - 1;
