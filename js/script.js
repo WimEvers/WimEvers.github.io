@@ -107,7 +107,7 @@ function toonAlleFotos(fotocode, i) {
     buttonPrev.addEventListener("click", prev(count, i))
     let buttonNext = document.getElementById("next");
     buttonNext.style.display = "block";
-    buttonnext.addEventListener("click", next(count, i))
+    buttonNext.addEventListener("click", next(count, i))
   }
 }
  
@@ -124,15 +124,15 @@ function next(count, i) // volgende foto tonen
 {
   console.log("next - count = ",count," i = ",i)
   if (count >= fotoSum - 1) {
-  count = count + 1;
-  showFoto(count, i)
+    count = count + 1;
+    showFoto(count, i)
   }
 }
 function prev(count, i) // vorige foto tonen
 {
   if(count > 0) {
-  count = count - 1;
-  showFoto(count, i) 
+    count = count - 1;
+    showFoto(count, i) 
   }
 }
 function showFoto(count, i) //foto met index count laten zien
@@ -232,5 +232,10 @@ function onMapClick(e) {
 mymap.on('click', onMapClick);  
 window.addEventListener('load', init); // nog niet in gebruik
 document.getElementById("map").addEventListener("click", zoomregioa); // wacht tot de gebruiker op een marker klikt in de map-area
+document.getElementById("prev").addEventListener("click", prev(count, i));
+document.getElementById("next").addEventListener("click", next(count, i));
+document.getElementById("stop").buttonStop.addEventListener("click",stop());
+
+
 
 
