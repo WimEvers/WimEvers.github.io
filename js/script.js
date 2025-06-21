@@ -71,7 +71,7 @@ function toonAlleFotos(fotocode, i) {
   // bepalen aantal fotos bij fotocode (indexOf werkt niet bij 2D array)
   var index;
   for (var i = 0; i < fotoAantal.length; i++) {
-    if (fotoAantal[i].[0] == colorcode) {
+    if (fotoAantal[i][0] == fotocode) {
       index = i;
     break;
     }
