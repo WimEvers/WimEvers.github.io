@@ -68,8 +68,15 @@ function toonAlleFotos(fotocode, i) {
   var count = 0;
   fotofound = true;
   var urlImage;
-  console.log(fotoAantal.indexOf("GHG"));
-  console.log("aantal foto's: ",fotoAantal[fotoAantal.indexOf(fotocode)][1]);
+  // bepalen aantal fotos bij fotocode (indexOf werkt niet bij 2D array)
+  var index;
+  for (var i = 0; i < fotoAantal.length; i++) {
+    if (fotoAantal[i].[0] == colorcode) {
+      index = i;
+    break;
+    }
+  }
+  console.log("aantal foto's: ",fotoAantal[index][1]);
   while (fotofound) {
     console.log(fotofound + " count: " + count);
     var image = new Image();
