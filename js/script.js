@@ -65,74 +65,77 @@ function zoomregiob() {
 function toonAlleFotos(fotocode, i) {
   console.log("alle foto's bij fotocode :" + fotocode + " locatie element: " + i)
        //check aantal foto's
-  var count = 0;
-  fotofound = true;
   var urlImage;
+  var fotoSum; // aantal fotos
   // bepalen aantal fotos bij fotocode (indexOf werkt niet bij 2D array)
   var index;
+  var count; //number van de foto to moet worden gezien
   for (var i = 0; i < fotoAantal.length; i++) {
     if (fotoAantal[i][0] == fotocode) {
       index = i;
     break;
     }
   }
-  console.log("aantal foto's: ",fotoAantal[index][1]);
-  while (fotofound) {
-    console.log(fotofound + " count: " + count);
-    var image = new Image();
-    urlImage = 'image/' + fotocode + count + '.png';
-    console.log("checking image " + urlImage);
-    image.src = urlImage;
-    console.log("image " + urlImage + " width " + image.width);
-    if (image.width == 0) { 
-      fotofound = false;
-      console.log("image " + urlImage + " not found");
-      } 
-    else { 
-      fotofound = true; 
-      console.log("image " + urlImage + " found");
-      }
-    count = count + 1;
-    if (count == 5) {
-      fotofound = false;
-    }
-  }
-  count = count - 1; // de laatste foto was er niet
-  // als count niet nul is moeten de button next en previous er komen
-  console.log("er zijn " + count + " fotos bij fotocode " + fotocode)
+  fotoSum = fotoAantal[index][1]; // 0  tm fotoaantal
+  console.log("aantal foto's: ",fotoSum);
+  console.log("er zijn " + fotoSum + " fotos bij fotocode " + fotocode)
   let vakantiePlaatsJaar = document.getElementById("fototext");
   alttext = locaties[i][2] + ", " + locaties[i][5];
   console.log(alttext);
   vakantiePlaatsJaar.innerHTML = alttext;
-  let  fotoBeschrijving = document.getElementById("onderschrift");
-  // TODO fotobeschrijving uit filenaam halen, wordt moeilijk
-  alttext = locaties[i][2] + ", " + locaties[i][5];
-  console.log(alttext);
-  fotoBeschrijving.innerHTML = alttext;
+  if (fotosum > 0) {
+    //stop button laten zien
+    buttonStop = document.getElementById("stop");
+    buttonStop.style.display = "block"
+    count = 0;
+    if (fotosum > 1) {
+      let  fotoBeschrijving = document.getElementById("onderschrift");
+  // TODO fotobeschrijving uit array fototext halen
+      alttext = locaties[i][2] + ", " + locaties[i][5];
+      console.log(alttext);
+      fotoBeschrijving.innerHTML = alttext;
   // juiste plaatje
-  let fotoimage = document.getElementById("foto");
-  console.log(fotoimage.scr);
-  fotoimage.src = "image/" + fotocode + 0 +".png";
-  fotoimage.alt = alttext
-  console.log(fotoimage.scr);
+      showFoto(count, i)
   // zichtbaar maken
-  let imarea = document.getElementById("imagearea")
-  imarea.style.zIndex = "5";
+      let imarea = document.getElementById("imagearea")
+      imarea.style.zIndex = "5";
+    }
+    // er zijn meer dan 1 fotos, 2 buttons toevoegen
+    let buttonPrev = document.getElementById("prev");
+    buttonPrev.style.display = "block";
+    let buttonNext = document.getElementById("next");
+    buttonNext.style.display = "block";
+  }
 }
  
 // functies bij de foto buttons
-function stop() {
+function stop() // venster met fotos sluiten
+{
   let imarea = document.getElementById("imagearea")
   imarea.style.zIndex = "2";
   mymap.closePopup();
 }
 
-function volgende() {
+function next(count, i ,max) // foto 'pic' + 1 tonene
+{
+  if (count != max) {
+  count = count + 1;
+  showFoto(count, i)
 }
-
-function vorige () {
+function prev(count, i) // foto 'pic' - 1 tonene
+{
+  if(count > 0) {
+  count = count - 1;
+  showFoto(count, i) 
+  }
 }
-
+function showFoto(count, i) //foto met index count laten zien
+{
+  let fotoimage = document.getElementById("foto");
+  console.log(fotoimage.scr);
+  fotoimage.src = "image/" + fotocode + count +".png";
+  fotoimage.alt = locaties[i][2] + ", " + locaties[i][5];
+}      
 // initialisatie van de wereld map
 
 var mymap = L.map('map').setView([10.0,15.0], 3);  // hele wereld = geo:37.09,-0.53?z=3
