@@ -83,12 +83,12 @@ function toonAlleFotos(fotocode, i) {
   alttext = locaties[i][2] + ", " + locaties[i][5];
   console.log(alttext);
   vakantiePlaatsJaar.innerHTML = alttext;
-  if (fotosum > 0) {
+  if (fotoSum > 0) {
     //stop button laten zien
     buttonStop = document.getElementById("stop");
     buttonStop.style.display = "block"
     count = 0;
-    if (fotosum > 1) {
+    if (fotoSum > 1) {
       let  fotoBeschrijving = document.getElementById("onderschrift");
   // TODO fotobeschrijving uit array fototext halen
       alttext = locaties[i][2] + ", " + locaties[i][5];
