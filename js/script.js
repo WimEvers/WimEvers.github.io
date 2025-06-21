@@ -104,10 +104,10 @@ function toonAlleFotos(fotocode, i) {
     // er zijn meer dan 1 fotos, 2 buttons zichtbaar maken
     let buttonPrev = document.getElementById("prev");
     buttonPrev.style.display = "block";
-    buttonPrev.addEventListener("click", prev(count, i)
+    buttonPrev.addEventListener("click", prev(count, i))
     let buttonNext = document.getElementById("next");
     buttonNext.style.display = "block";
-    buttonnext.addEventListener("click", next(count, i)
+    buttonnext.addEventListener("click", next(count, i))
   }
 }
  
