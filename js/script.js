@@ -68,7 +68,7 @@ function toonAlleFotos(fotocode, i) {
   var count = 0;
   fotofound = true;
   var urlImage;
-  console.log(fotoAantal.indexOf(fotocode));
+  console.log(fotoAantal.indexOf("GHG"));
   console.log("aantal foto's: ",fotoAantal[fotoAantal.indexOf(fotocode)][1]);
   while (fotofound) {
     console.log(fotofound + " count: " + count);
