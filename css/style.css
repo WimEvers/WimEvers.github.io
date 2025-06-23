@@ -112,7 +112,7 @@ table {
   padding: 1px;
   text-align: center;
   text-decoration: none;
-  display: none;
+  display: block;
   font-size: 20px;
   height: 34px;
   margin: 1px 1px;
@@ -130,7 +130,7 @@ table {
   height: 684px; /* 1px border 1px padding 40px header, 600px foto, 40px footer 1px padding 1px border*/
   border: 1px solid black;
   padding: 1px;
-  z-index: 2; /*achter de map */
+  z-index: 5; /*achter de map */
 }
 
 #foto {

@@ -1,3 +1,10 @@
+// global variables
+var lokatieNummer = 0; // = rij in array locaties = vakantiemarker
+var fotoSum = 0; // = aantal foto's bij deze vakantiemarker
+var ditFotoNummer = 0; //het volgnummer van de nu gedisplayde foto
+var regioNummer = 0; // = rij in array vakregio = de gekozen region
+var fotocode = "000"; // = locatie[locatienummer][7]
+// functies
 function init(){
     //alert("init called");
  }
@@ -6,6 +13,7 @@ function zoomregioa() {
   //alert("clicked in window")
   for (var i = 0;  i< vakregio.length; ++i) {
     if (markerlista[i].isPopupOpen()) {
+      regioNummer = i;
       //deleten van de marker
       var markerfound = markerlista[i];
       console.log("markerfound :" + markerfound)
@@ -55,21 +63,23 @@ function zoomregiob() {
     console.log("aantal locaties: " + locaties.length)
     console.log("checking [" + i + "]: " + markerlistb[i])
     if (markerlistb[i].isPopupOpen()) {
+      lokatieNummer = i
       console.log("popup [" + i + "]: open");
       fotocode = locaties[i][7];
-      toonAlleFotos(fotocode, i)
+      toonAlleFotos()
     }
   }
 }
 
-function toonAlleFotos(fotocode, i) {
+function toonAlleFotos() {
+  fotocode = locaties[lokatieNummer][7];
   console.log("alle foto's bij fotocode :" + fotocode + " locatie element: " + i)
        //check aantal foto's
   var urlImage;
   var fotoSum; // aantal fotos
   // bepalen aantal fotos bij fotocode (indexOf werkt niet bij 2D array)
   var index;
-  var count; //number van de foto to moet worden gezien
+  var count; //number van de foto die moet worden gezien
   for (var jj = 0; jj < fotoAantal.length; jj++) {
     if (fotoAantal[jj][0] == fotocode) {
       index = jj;
@@ -87,8 +97,8 @@ function toonAlleFotos(fotocode, i) {
     //stop button laten zien
     buttonStop = document.getElementById("stop");
     buttonStop.style.display = "block"
-    count = 0;
-    buttonStop.addEventListener("click",stop());
+    ditFotoNummer = 0;
+    //buttonStop.addEventListener("click",stop());
     if (fotoSum > 1) {
       let  fotoBeschrijving = document.getElementById("onderschrift");
   // TODO fotobeschrijving uit array fototext halen
@@ -96,7 +106,7 @@ function toonAlleFotos(fotocode, i) {
       console.log(alttext);
       fotoBeschrijving.innerHTML = alttext;
   // juiste plaatje
-      showFoto(count, i)
+      showFoto()
   // zichtbaar maken
       let imarea = document.getElementById("imagearea")
       imarea.style.zIndex = "5";
@@ -104,10 +114,10 @@ function toonAlleFotos(fotocode, i) {
     // er zijn meer dan 1 fotos, 2 buttons zichtbaar maken
     let buttonPrev = document.getElementById("prev");
     buttonPrev.style.display = "block";
-    buttonPrev.addEventListener("click", prev(count, i))
+    //buttonPrev.addEventListener("click", prev(count, i))
     let buttonNext = document.getElementById("next");
     buttonNext.style.display = "block";
-    buttonNext.addEventListener("click", next(count, i))
+    //buttonNext.addEventListener("click", next(count, i, fotoSum))
   }
 }
  
@@ -116,33 +126,39 @@ function toonAlleFotos(fotocode, i) {
 function stop() // venster met fotos sluiten
 {
   let imarea = document.getElementById("imagearea")
+  console.log("stop called")
   imarea.style.zIndex = "2";
   mymap.closePopup();
 }
 
-function next(count, i) // volgende foto tonen
+function next() // volgende foto tonen
 {
-  console.log("next - count = ",count," i = ",i)
-  if (count >= fotoSum - 1) {
-    count = count + 1;
-    showFoto(count, i)
+  console.log("next - count = ",ditFotoNummer," i = ",i)
+  if (ditFotoNummer >= fotoSum - 1) {
+    ditFotoNummer = ditFotoNummer + 1;
+    showFoto()
   }
 }
-function prev(count, i) // vorige foto tonen
+function prev() // vorige foto tonen
 {
-  if(count > 0) {
-    count = count - 1;
-    showFoto(count, i) 
+  if(ditFotoNummer > 0) {
+    ditFotoNummer = ditFotoNummer - 1;
+    showFoto() 
   }
 }
-function showFoto(count, i) //foto met index count laten zien
+function showFoto() //foto met index count laten zien
 {
   let fotoimage = document.getElementById("foto");
   console.log(fotoimage.scr);
-  fotoimage.src = "image/" + fotocode + count +".png";
+  fotocode = locatie[locatieNummer][7]
+  fotoimage.src = "image/" + fotocode + ditFotoNummer +".png";
   fotoimage.alt = locaties[i][2] + ", " + locaties[i][5];
 }      
 // initialisatie van de wereld map
+
+let count =0;
+let i = 0;
+let fotoSum = 1;
 
 var mymap = L.map('map').setView([10.0,15.0], 3);  // hele wereld = geo:37.09,-0.53?z=3
 
@@ -176,10 +192,10 @@ const vakregio = [
 var regionaam;
 var regiofound = "none";
 const markerlista = [];
-for (var i = 0; i < vakregio.length; ++i) {
-    regionaam="<p>"+vakregio[i][3]+"</p>";
+for (var j = 0; j < vakregio.length; ++j) {
+    regionaam="<p>"+vakregio[j][3]+"</p>";
     console.log(regionaam);
-    markerA = L.marker([vakregio[i][0], vakregio[i][1]]).addTo(mymap).bindPopup(regionaam).openPopup();
+    markerA = L.marker([vakregio[i][0], vakregio[j][1]]).addTo(mymap).bindPopup(regionaam).openPopup();
     console.log("marker A:" + markerA);
     markerlista.push(markerA);
 };
@@ -195,10 +211,10 @@ const locaties = [
 [28.185232, -17.200588, "Camino de los Pasos",  "Canarische eilanden", "Spanje", 2025, "April", "WAG", "hiking"] ]
 
 const markerlistb = [];
-for (var i = 0; i < locaties.length; ++i) {
+for (var j = 0; j < locaties.length; ++j) {
     var locatienaam = "<p>" + locaties[i][2] + "</p>";
     console.log(locatienaam);
-    markerB = L.marker([locaties[i][0], locaties[i][1]]);//.addTo(mymap).bindPopup(locatienaam).openPopup();
+    markerB = L.marker([locaties[j][0], locaties[j][1]]);//.addTo(mymap).bindPopup(locatienaam).openPopup();
     markerlistb.push(markerB);
 };
 mymap.closePopup() // is dit nog nodig
@@ -233,8 +249,8 @@ mymap.on('click', onMapClick);
 window.addEventListener('load', init); // nog niet in gebruik
 document.getElementById("map").addEventListener("click", zoomregioa); // wacht tot de gebruiker op een marker klikt in de map-area
 document.getElementById("prev").addEventListener("click", prev(count, i));
-document.getElementById("next").addEventListener("click", next(count, i));
-document.getElementById("stop").buttonStop.addEventListener("click",stop());
+document.getElementById("next").addEventListener("click", next(count, i, fotoSum));
+document.getElementById("stop").addEventListener("click",stop());
 
 
 
