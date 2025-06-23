@@ -155,7 +155,7 @@ function showFoto() //foto met fotocode en ditFotoNummer laten zien
 {
   let fotoimage = document.getElementById("foto");
   console.log(fotoimage.scr);
-  fotocode = locaties[locatieNummer][7]
+  fotocode = locaties[lokatieNummer][7]
   fotoimage.src = "image/" + fotocode + ditFotoNummer +".png";
   fotoimage.alt = locaties[lokatieNummer][2] + ", " + locaties[lokatieNummer][5];
 } 
