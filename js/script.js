@@ -4,20 +4,24 @@ var fotoSum = 0; // = aantal foto's bij deze vakantiemarker
 var ditFotoNummer = 0; //het volgnummer van de nu gedisplayde foto
 var regioNummer = 0; // = rij in array vakregio = de gekozen region
 var fotocode = "000"; // = locatie[locatienummer][7]
+
 // functies
+
 function init(){
     //alert("init called");
  }
+ 
 // deze functie zoomed in op de kaart en laat dan de details zien
+
 function zoomregioa() {
   //alert("clicked in window")
   for (var i = 0;  i< vakregio.length; ++i) {
-    if (markerlista[i].isPopupOpen()) {
+    if (markerListA[i].isPopupOpen()) {
       regioNummer = i;
       //deleten van de marker
-      var markerfound = markerlista[i];
+      var markerfound = markerListA[i];
       console.log("markerfound :" + markerfound)
-      console.log("markerlist :" + markerlista[i])
+      console.log("markerlist :" + markerListA[i])
       mymap.removeLayer(markerfound); // werkt nu
       var regiodetail = vakregio[i][3];
       console.log("regio selected is " + regiodetail);
@@ -32,17 +36,17 @@ function zoomregioa() {
             console.log("icon type: ", iconType)
             switch (iconType) {
               case "hotel":
-                markerlistb[j].setIcon(hotelIcon); //hier juiste icon type neerzetten
-                markerlistb[j].addTo(mymap).bindPopup(locaties[j][2]).openPopup(); //openPopup kan weg?
+                markerListB[j].setIcon(hotelIcon); //hier juiste icon type neerzetten
+                markerListB[j].addTo(mymap).bindPopup(locaties[j][2]).openPopup(); //openPopup kan weg?
                 console.log("hotelIcon bij: ", locaties[i][2]);
                 break;
               case "hiking":
-                markerlistb[j].setIcon(hikingIcon); //hier juiste icon type neerzetten
-                markerlistb[j].addTo(mymap).bindPopup(locaties[j][2]).openPopup(); //openPopup kan weg?
+                markerListB[j].setIcon(hikingIcon); //hier juiste icon type neerzetten
+                markerListB[j].addTo(mymap).bindPopup(locaties[j][2]).openPopup(); //openPopup kan weg?
                 console.log("hikingIcon bij: ", locaties[i][2]);
                 break;                
               default:
-                markerlistb[j].addTo(mymap).bindPopup(locaties[j][2]).openPopup(); //openPopup kan weg?
+                markerListB[j].addTo(mymap).bindPopup(locaties[j][2]).openPopup(); //openPopup kan weg?
             }         
           } // end if
         } //end for loop
@@ -57,12 +61,13 @@ function zoomregioa() {
   document.getElementById("map").addEventListener("click", zoomregiob); // wacht tot de gebruiker op een van de nieuwe markers klikt
 }
  // laat een of meerdere foto zien die erbij horen
+ 
 function zoomregiob() { 
   console.log("in zoomregiob")
   for (var i = 0;  i < locaties.length; ++i) {
     console.log("aantal locaties: " + locaties.length)
-    console.log("checking [" + i + "]: " + markerlistb[i])
-    if (markerlistb[i].isPopupOpen()) {
+    console.log("checking [" + i + "]: " + markerListB[i])
+    if (markerListB[i].isPopupOpen()) {
       lokatieNummer = i
       console.log("popup [" + i + "]: open");
       fotocode = locaties[i][7];
@@ -90,7 +95,7 @@ function toonAlleFotos() {
   console.log("aantal foto's: ",fotoSum);
   console.log("er zijn " + fotoSum + " fotos bij fotocode " + fotocode)
   let vakantiePlaatsJaar = document.getElementById("fototext");
-  alttext = locaties[i][2] + ", " + locaties[i][5];
+  alttext = locaties[lokatieNummer][2] + ", " + locaties[lokatieNummer][5];
   console.log(alttext);
   vakantiePlaatsJaar.innerHTML = alttext;
   if (fotoSum > 0) {
@@ -102,7 +107,7 @@ function toonAlleFotos() {
     if (fotoSum > 1) {
       let  fotoBeschrijving = document.getElementById("onderschrift");
   // TODO fotobeschrijving uit array fototext halen
-      alttext = locaties[i][2] + ", " + locaties[i][5];
+      alttext = locaties[lokatieNummer][2] + ", " + locaties[lokatieNummer][5];
       console.log(alttext);
       fotoBeschrijving.innerHTML = alttext;
   // juiste plaatje
@@ -146,27 +151,14 @@ function prev() // vorige foto tonen
     showFoto() 
   }
 }
-function showFoto() //foto met index count laten zien
+function showFoto() //foto met fotocode en ditFotoNummer laten zien
 {
   let fotoimage = document.getElementById("foto");
   console.log(fotoimage.scr);
   fotocode = locatie[locatieNummer][7]
   fotoimage.src = "image/" + fotocode + ditFotoNummer +".png";
-  fotoimage.alt = locaties[i][2] + ", " + locaties[i][5];
-}      
-// initialisatie van de wereld map
-
-let count =0;
-let i = 0;
-let fotoSum = 1;
-
-var mymap = L.map('map').setView([10.0,15.0], 3);  // hele wereld = geo:37.09,-0.53?z=3
-
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  maxZoom: 19,
-  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-  }).addTo(mymap);
-  
+  fotoimage.alt = locaties[lokatieNummer][2] + ", " + locaties[lokatieNummer][5];
+} 
 // icons
 var hotelIcon = L.icon({
     iconUrl: "mapicons/hotel.png",
@@ -180,27 +172,14 @@ var hikingIcon = L.icon({
     iconAnchor:   [19, 44], // point of the icon which will correspond to marker's location
     popupAnchor:  [0, -50] // point from which the popup should open relative to the iconAnchor
 });
-console.log("icons defined");
-
+console.log("icons defined");  
+  
 /*Data vakanties 
 formaat: (0)latitude, (1)langitude, (2)zoom, (3)regio*/
 const vakregio = [
 [28.276,  -16.9409,  10, "Canarische eilanden"], 
 [56.502,   -3.9220,   7, "Schotland"],
 [39.371,    2.7430,   9, "Mallorca"]];
-
-var regionaam;
-var regiofound = "none";
-const markerlista = [];
-for (var j = 0; j < vakregio.length; ++j) {
-    regionaam="<p>"+vakregio[j][3]+"</p>";
-    console.log(regionaam);
-    markerA = L.marker([vakregio[i][0], vakregio[j][1]]).addTo(mymap).bindPopup(regionaam).openPopup();
-    console.log("marker A:" + markerA);
-    markerlista.push(markerA);
-};
-mymap.closePopup()
-console.log("markerlist a defined "+markerlista.length+" items");
 
 /*Data locaties 
 formaat: (0)latitude, (1)langitude, (2)plaatsnaam, (3)regio, (4)land, (5)jaartal, (6)maand, (7)fotocode (8) icon*/
@@ -210,15 +189,41 @@ const locaties = [
 [28.14428,  -17.21317 , "Hermigua",             "Canarische eilanden", "Spanje", 2025, "April", "GHG", "hotel"],
 [28.185232, -17.200588, "Camino de los Pasos",  "Canarische eilanden", "Spanje", 2025, "April", "WAG", "hiking"] ]
 
-const markerlistb = [];
+// initialisatie van de wereld map
+
+var mymap = L.map('map').setView([10.0,15.0], 3);  // hele wereld = geo:37.09,-0.53?z=3
+
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 19,
+  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(mymap);
+
+// lijst van alle regiomakers
+
+var regionaam;
+var regiofound = "none";
+const markerListA = [];
+for (var j = 0; j < vakregio.length; ++j) {
+    regionaam="<p>"+vakregio[j][3]+"</p>";
+    console.log(regionaam);
+    markerA = L.marker([vakregio[i][0], vakregio[j][1]]).addTo(mymap).bindPopup(regionaam).openPopup();
+    console.log("marker A:" + markerA);
+    markerListA.push(markerA);
+};
+mymap.closePopup()
+console.log("markerlist a defined "+markerListA.length+" items");
+
+//lijst van alle locatiemarkers
+
+const markerListB = [];
 for (var j = 0; j < locaties.length; ++j) {
-    var locatienaam = "<p>" + locaties[i][2] + "</p>";
+    var locatienaam = "<p>" + locaties[lokatieNummer][2] + "</p>";
     console.log(locatienaam);
     markerB = L.marker([locaties[j][0], locaties[j][1]]);//.addTo(mymap).bindPopup(locatienaam).openPopup();
-    markerlistb.push(markerB);
+    markerListB.push(markerB);
 };
 mymap.closePopup() // is dit nog nodig
-console.log("markerlist b defined "+markerlistb.length+" items");
+console.log("markerlist b defined "+markerListB.length+" items");
 
 
 
@@ -248,9 +253,9 @@ function onMapClick(e) {
 mymap.on('click', onMapClick);  
 window.addEventListener('load', init); // nog niet in gebruik
 document.getElementById("map").addEventListener("click", zoomregioa); // wacht tot de gebruiker op een marker klikt in de map-area
-document.getElementById("prev").addEventListener("click", prev(count, i));
-document.getElementById("next").addEventListener("click", next(count, i, fotoSum));
-document.getElementById("stop").addEventListener("click",stop());
+document.getElementById("prev").addEventListener("click", prev);
+document.getElementById("next").addEventListener("click", next);
+document.getElementById("stop").addEventListener("click",stop);
 
 
 
