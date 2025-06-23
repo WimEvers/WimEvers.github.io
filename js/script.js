@@ -138,7 +138,7 @@ function stop() // venster met fotos sluiten
 
 function next() // volgende foto tonen
 {
-  console.log("next - count = ",ditFotoNummer," i = ",i)
+  console.log("next - count = ",ditFotoNummer)
   if (ditFotoNummer >= fotoSum - 1) {
     ditFotoNummer = ditFotoNummer + 1;
     showFoto()
