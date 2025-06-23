@@ -206,7 +206,7 @@ const markerListA = [];
 for (var j = 0; j < vakregio.length; ++j) {
     regionaam="<p>"+vakregio[j][3]+"</p>";
     console.log(regionaam);
-    markerA = L.marker([vakregio[i][0], vakregio[j][1]]).addTo(mymap).bindPopup(regionaam).openPopup();
+    markerA = L.marker([vakregio[j][0], vakregio[j][1]]).addTo(mymap).bindPopup(regionaam).openPopup();
     console.log("marker A:" + markerA);
     markerListA.push(markerA);
 };
