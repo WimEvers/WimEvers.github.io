@@ -146,6 +146,7 @@ function next() // volgende foto tonen
 }
 function prev() // vorige foto tonen
 {
+  console.log("prev - count = ",ditFotoNummer)
   if(ditFotoNummer > 0) {
     ditFotoNummer = ditFotoNummer - 1;
     showFoto() 
