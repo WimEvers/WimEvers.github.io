@@ -130,7 +130,7 @@ table {
   height: 684px; /* 1px border 1px padding 40px header, 600px foto, 40px footer 1px padding 1px border*/
   border: 1px solid black;
   padding: 1px;
-  z-index: 5; /*achter de map */
+  z-index: 2; /*achter de map */
 }
 
 #foto {
