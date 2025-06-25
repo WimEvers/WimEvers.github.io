@@ -44,7 +44,11 @@ function zoomregioa() {
                 markerListB[j].setIcon(hikingIcon); //hier juiste icon type neerzetten
                 markerListB[j].addTo(mymap).bindPopup(locaties[j][2]).openPopup(); //openPopup kan weg?
                 console.log("hikingIcon bij: ", locaties[i][2]);
-                break;                
+                break;
+              case "kloof":
+                markerListB[j].setIcon(kloofIcon); //hier juiste icon type neerzetten
+                markerListB[j].addTo(mymap).bindPopup(locaties[j][2]).openPopup(); //openPopup kan weg?
+                console.log("kloofIcon bij: ", locaties[i][2]);
               default:
                 markerListB[j].addTo(mymap).bindPopup(locaties[j][2]).openPopup(); //openPopup kan weg?
             }         
