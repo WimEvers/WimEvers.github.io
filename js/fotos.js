@@ -2,7 +2,7 @@
 // TODO: Deze is gegenereerd door het python programma genFoto.py
 // fotoAantal; het aantal foto's per fotocode
 // (0) fotocode (1) aantal foto
-let ii = 0;
+ii = 0;
 const fotoAantal = [
 ["GHG", 2],
 ["THM", 0],
