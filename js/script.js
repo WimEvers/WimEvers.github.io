@@ -183,7 +183,13 @@ var kloofIcon = L.icon({
     popupAnchor:  [0, -50] // point from which the popup should open relative to the iconAnchor
 });
 console.log("icons defined");  
-  
+// icons toevoegen aan legenda
+let legenda = document.getElementById("legenda")
+let img = document.createElement('img');
+img.src ="mapicons/hotel.png";
+img.title = "Hotel";
+legenda.appendChild(img);
+
 /*Data vakanties 
 formaat: (0)latitude, (1)langitude, (2)zoom, (3)regio*/
 const vakregio = [
