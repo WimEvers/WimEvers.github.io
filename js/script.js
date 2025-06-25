@@ -171,9 +171,11 @@ function showFoto() //foto met fotocode en ditFotoNummer laten zien
   var index = -1;
   for (var jj = 0; jj < fotoText.length; jj++)
   {
-    if (fotoText[jj][0] == filename) {
+    if (fotoText[jj][0] == filename) 
+    {
       index = jj;
-    break;
+      break;
+    }
   }
   if (index >= 0) 
   {
