@@ -26,6 +26,7 @@ function zoomregioa() {
       var regiodetail = vakregio[i][3];
       console.log("regio selected is " + regiodetail);
       //hier komt de loop over een specifiek regio, in eerste instantie alleen voor Canarische eilanden
+      // TODO uitbreiden met willekeurige regio
       if (regiodetail = "Canarische eilanden") {
         console.log("in if statement");
         mymap.setView([vakregio[i][0],vakregio[i][1]], vakregio[i][2]);  // deze regio
@@ -117,7 +118,6 @@ function toonAlleFotos()
       buttonNext.style.display = "block";
     }
     let  fotoBeschrijving = document.getElementById("onderschrift");
-    // TODO fotobeschrijving uit array fototext halen
     alttext = locaties[lokatieNummer][2] + ", " + locaties[lokatieNummer][5];
     console.log(alttext);
     fotoBeschrijving.innerHTML = alttext;
@@ -164,6 +164,16 @@ function showFoto() //foto met fotocode en ditFotoNummer laten zien
   fotocode = locaties[lokatieNummer][7]
   fotoimage.src = "image/" + fotocode + ditFotoNummer +".png";
   fotoimage.alt = locaties[lokatieNummer][2] + ", " + locaties[lokatieNummer][5];
+  // fotobeschrijving uit array fototext halen
+  var filename = fotocode + ditFotoNummer;
+  var index = -1;
+  for (var jj = 0; jj < fotoText.length; jj++)
+  {
+    if (fotoText[jj][0] == filename) {
+      index = jj;
+    break;
+  }
+  document.getElementById("onderschrift").innerHTML = fotoText[index][1]
 } 
 // icons
 var hotelIcon = L.icon({
