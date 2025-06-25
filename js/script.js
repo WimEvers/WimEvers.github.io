@@ -144,17 +144,19 @@ function stop() // venster met fotos sluiten
 function next() // volgende foto tonen
 {
   console.log("next - count = ",ditFotoNummer)
-  if (ditFotoNummer < fotoSum - 1) {
+  if (ditFotoNummer < fotoSum - 1) 
+  {
     ditFotoNummer = ditFotoNummer + 1;
-    showFoto()
+    showFoto();
   }
 }
 function prev() // vorige foto tonen
 {
   console.log("prev - count = ",ditFotoNummer)
-  if(ditFotoNummer > 0) {
+  if(ditFotoNummer > 0) 
+  {
     ditFotoNummer = ditFotoNummer - 1;
-    showFoto() 
+    showFoto();
   }
 }
 function showFoto() //foto met fotocode en ditFotoNummer laten zien
@@ -173,7 +175,10 @@ function showFoto() //foto met fotocode en ditFotoNummer laten zien
       index = jj;
     break;
   }
-  document.getElementById("onderschrift").innerHTML = fotoText[index][1]
+  if (index >= 0) 
+  {
+    document.getElementById("onderschrift").innerHTML = fotoText[index][1];
+  }
 } 
 // icons
 var hotelIcon = L.icon({
