@@ -79,9 +79,7 @@ function zoomregiob() {
 function toonAlleFotos() {
   fotocode = locaties[lokatieNummer][7];
   console.log("alle foto's bij fotocode :" + fotocode + " locatie element: " + lokatieNummer)
-       //check aantal foto's
-  var urlImage;
-  var fotoSum; // aantal fotos
+  //check aantal foto's
   // bepalen aantal fotos bij fotocode (indexOf werkt niet bij 2D array)
   var index;
   var count; //number van de foto die moet worden gezien
