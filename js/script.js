@@ -238,8 +238,6 @@ for (var j = 0; j < locaties.length; ++j) {
 mymap.closePopup() // is dit nog nodig
 console.log("markerlist b defined "+markerListB.length+" items");
 
-
-
 /* screen size
 var w = window.innerWidth;
 var h = window.innerHeight;
@@ -255,15 +253,16 @@ const footerheight = 20+'px';
     
 var popup = L.popup();
 
-function onMapClick(e) {
-    popup
-        .setLatLng(e.latlng)
-        .setContent("You clicked the map at " + e.sourceTarget.toString())
-        .openOn(mymap);
-}
+/*function onMapClick(e) 
+{
+   popup
+    .setLatLng(e.latlng)
+    .setContent("You clicked the map at " + e.sourceTarget.toString())
+    .openOn(mymap); 
+} */
 // eventlisteners aanzetten
 
-mymap.on('click', onMapClick);  
+mymap.on('click', stop);  
 window.addEventListener('load', init); // nog niet in gebruik
 document.getElementById("map").addEventListener("click", zoomregioa); // wacht tot de gebruiker op een marker klikt in de map-area
 document.getElementById("prev").addEventListener("click", prev);
