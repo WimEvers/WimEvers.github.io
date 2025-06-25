@@ -112,6 +112,7 @@ table {
   padding: 1px;
   text-align: center;
   text-decoration: none;
+  border-radius: 17px;
   display: none;
   font-size: 20px;
   height: 34px;
@@ -135,13 +136,13 @@ table {
 
 #foto {
   position: absolute;
-  top: 34px;
+  top: 36px;
 }
 
 #fototext {
   position: absolute;
   top: 0px;
-  height: 34px;
+  height: 30px;
   font-size: 20px;
   margin: 0px;
 }
