@@ -136,6 +136,8 @@ function stop() // venster met fotos sluiten
   let imarea = document.getElementById("imagearea")
   console.log("stop called")
   imarea.style.zIndex = "2";
+  document.getElementById("prev").style.display = "none";
+  document.getElementById("next").style.display = "none";
   mymap.closePopup();
 }
 
