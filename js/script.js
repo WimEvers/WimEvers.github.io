@@ -80,14 +80,16 @@ function zoomregiob() {
   }
 }
 
-function toonAlleFotos() {
+function toonAlleFotos() 
+{
   fotocode = locaties[lokatieNummer][7];
   console.log("alle foto's bij fotocode :" + fotocode + " locatie element: " + lokatieNummer)
   //check aantal foto's
   // bepalen aantal fotos bij fotocode (indexOf werkt niet bij 2D array)
   var index;
   var count; //number van de foto die moet worden gezien
-  for (var jj = 0; jj < fotoAantal.length; jj++) {
+  for (var jj = 0; jj < fotoAantal.length; jj++)
+  {
     if (fotoAantal[jj][0] == fotocode) {
       index = jj;
     break;
@@ -100,31 +102,30 @@ function toonAlleFotos() {
   alttext = locaties[lokatieNummer][2] + ", " + locaties[lokatieNummer][5];
   console.log(alttext);
   vakantiePlaatsJaar.innerHTML = alttext;
-  if (fotoSum > 0) {
+  if (fotoSum > 0) 
+  {
     //stop button laten zien
     buttonStop = document.getElementById("stop");
     buttonStop.style.display = "block"
     ditFotoNummer = 0;
-    //buttonStop.addEventListener("click",stop());
-    if (fotoSum > 1) {
-      let  fotoBeschrijving = document.getElementById("onderschrift");
-  // TODO fotobeschrijving uit array fototext halen
-      alttext = locaties[lokatieNummer][2] + ", " + locaties[lokatieNummer][5];
-      console.log(alttext);
-      fotoBeschrijving.innerHTML = alttext;
-  // juiste plaatje
-      showFoto()
-  // zichtbaar maken
-      let imarea = document.getElementById("imagearea")
-      imarea.style.zIndex = "5";
+    if (fotoSum > 1) 
+    {
+      // er zijn meer dan 1 fotos, nog 2 buttons zichtbaar maken
+      let buttonPrev = document.getElementById("prev");
+      buttonPrev.style.display = "block";
+      let buttonNext = document.getElementById("next");
+      buttonNext.style.display = "block";
     }
-    // er zijn meer dan 1 fotos, 2 buttons zichtbaar maken
-    let buttonPrev = document.getElementById("prev");
-    buttonPrev.style.display = "block";
-    //buttonPrev.addEventListener("click", prev(count, i))
-    let buttonNext = document.getElementById("next");
-    buttonNext.style.display = "block";
-    //buttonNext.addEventListener("click", next(count, i, fotoSum))
+    let  fotoBeschrijving = document.getElementById("onderschrift");
+    // TODO fotobeschrijving uit array fototext halen
+    alttext = locaties[lokatieNummer][2] + ", " + locaties[lokatieNummer][5];
+    console.log(alttext);
+    fotoBeschrijving.innerHTML = alttext;
+    // juiste plaatje
+    showFoto()
+    // zichtbaar maken
+    let imarea = document.getElementById("imagearea")
+    imarea.style.zIndex = "5";
   }
 }
  
