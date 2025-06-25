@@ -194,7 +194,7 @@ const locaties = [
 [28.14428,  -17.21317 , "Hermigua",             "Canarische eilanden", "Spanje", 2025, "April", "GHG", "hotel"], //Gomera HermiGua
 [28.185232, -17.200588, "Camino de los Pasos",  "Canarische eilanden", "Spanje", 2025, "April", "GWA", "hiking"], //Gomera Wandeling Agole
 [28.317941, -16.805751, "Parque Rural de Teno", "Canarische eilanden", "Spanje", 2025, "April", "TWG", "hiking"], //Tenerife Wandeling Tenogebergte 
-]28.07420,  -17.23017,  "Barranco de Guarimiar","Canarische eilanden", "Spanje", 2025, "April", "GKG", "kloof"], //Gomera Kloof barranco de Guarimiar
+[28.07420,  -17.23017,  "Barranco de Guarimiar","Canarische eilanden", "Spanje", 2025, "April", "GKG", "kloof"], //Gomera Kloof barranco de Guarimiar
 ]
 
 // initialisatie van de wereld map
