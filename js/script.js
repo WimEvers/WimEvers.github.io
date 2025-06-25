@@ -208,6 +208,9 @@ let img = document.createElement('img');
 img.src ="mapicons/hotel.png";
 img.title = "Hotel";
 legenda.appendChild(img);
+let txt = document.createElement("p")
+txt.innerHTML = "Hotel, B&B";
+legenda.appendChild(txt);
 
 /*Data vakanties 
 formaat: (0)latitude, (1)langitude, (2)zoom, (3)regio*/
