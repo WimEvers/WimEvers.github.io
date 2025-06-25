@@ -7,9 +7,14 @@ const fotoAantal = [
 ["GHG", 2],
 ["THM", 0],
 ["TLS", 0],
-["WAG", 0] ];
+["GWG", 0],
+["TWT", 0],
+["GKG", 1],
+];
 // fotoTekst; de beschrijving bij elke foto
 // (0) fotonaam (=filename) (1) Omschrijving
 const fotoText = [
 ["GHG0", "Hotel Apartamentos Los Telares"],
-["GHG1", "Uitzicht vanaf ons balkon"] ];
+["GHG1", "Uitzicht vanaf ons balkon"],
+["GKG0", "Barranco de Guarimiar; afdeling"]
+];
