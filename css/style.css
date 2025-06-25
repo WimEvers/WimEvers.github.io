@@ -93,7 +93,7 @@ table {
   font-weight: lighter;
 }
 
-.legenda {
+#legenda {
   position: absolute;
   background: white;
   width: 100px;
