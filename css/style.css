@@ -1,3 +1,7 @@
+#body {
+  margin: 0px;
+  font-family: Zain, sans-serif;
+}
 #map { 
   position: absolute;
   left: 0px;
@@ -9,12 +13,7 @@
   z-index:4;
   }
 
-#body {
-  margin: 0px;
-}
-
 header {
-  font-family: Zain, sans-serif;
   color: gray; /* text color */ 
   font-weight: normal;
   background-color: rgba(100, 100, 100, 0.5);
@@ -30,21 +29,6 @@ footer { /* voor bronvermeldingen */
   font-size: 12px;
   z-index: 5;
 }
-/*
-div{
-  margin: 1% 1% 1% 1%;
-}
-
-th, td {
-  padding: 0.5%;
-  text-align: left;
-  height: 0.6em
-}
-
-table {
-  width: 40%
-}
-*/
 
 /* navigation menu */
 
@@ -103,6 +87,19 @@ table {
   z-index: 10;
   border: 2px solid black;
   padding: 2px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-auto-rows: 45px;
+}
+#headitem {
+   grid-column: 1 / span 2;
+   text-align: center;
+   font-size: 1.5em;
+}
+
+#bron {
+   grid-column: 1 / span 2;
+   margin: auto;
 }
 
 .button {
@@ -125,7 +122,7 @@ table {
 #imagearea {
   position: absolute;
   background: white;
-  width: 804px;/* 1px border, 800px foto, 1px border*/
+  width: 804px;/* 1px padding 1px border, 800px foto, 1px border 1 px padding*/
   left: 30px;
   top: 50px;
   height: 684px; /* 1px border 1px padding 40px header, 600px foto, 40px footer 1px padding 1px border*/
@@ -149,39 +146,9 @@ table {
 #onderschrift {
   position: absolute;
   bottom: 0px;
-  height: 40px;
+  height: 30px;
   font-size: 20px;
   margin: 0px;
-}
-/*
-.image {
-  position: relative;
-  float: right;
-  right: 2%;
-  width: 45%;
-  height: auto;
-  display: block;
-  padding: 0 2.5% 0 2.5%
-}
-  
-.ytborder {
- border: 0
-}
-
-/* wrapper and canvas are used only in the maps page 
-
-#wrapper {
-  width: 960px;
-  height: 900px;
-  background: linear-gradient(to bottom, #feffff 0%,#ddf1f9 45%,#a0d8ef 100%);
-  margin:0 auto;
-  overflow: hidden;
-}
-#canvas {
-  width: 900px;
-  height: 800px;
-  background-color: #ccc;
-  margin: 20px auto;
 }
 
 /* modern gsm 
