@@ -2,11 +2,16 @@
 // TODO: Deze is gegenereerd door het python programma genFoto.py
 
 /*Data vakanties 
-formaat: (0)latitude, (1)langitude, (2)zoomfactor, (3)regio (4)vakantiesoort (5)jaar*/
+formaat: (0)latitude, (1)langitude, (2)zoomfactor, (3)regio (4)vakantiesoort (5)jaar (6)land*/
 const vakregio = [
-[28.276,  -16.9409,  10, "Canarische eilanden" ,"vakantie", 2025], 
-[56.502,   -3.9220,   7, "Schotland"           ,"vakantie", 2024],
-[39.371,    2.7430,   9, "Mallorca"            ,"vakantie", 2024],
+[28.276, -16.9409, 10, "Canarische eilanden" ,"vakantie" ,2025, "Spanje"], 
+[56.502,  -3.9220,  7, "Schotland"           ,"vakantie" ,2024, "UK"],
+[39.371,   2.7430,  9, "Mallorca"            ,"vakantie" ,2024, "Spanje"],
+[49.6962,  5.2432, 12, "Ardennen"            ,"trip"     ,2024, "Belgie"],    // geo:49.6962,5.2432?z=12
+[50.5853,  6.2557, 12, "Eifel"               ,"trip"     ,2024, "Duitsland"], // geo:50.58528,6.25568?z=14 
+[51.0236,  3.6773, 12, "Gent"                ,"trip"     ,2024, "Belgie"],    // geo:51.0236,3.6773?z=12
+[51.5115,  3.7292, 11, "Zeeland"             ,"trip"     ,2024, "Nederland"], // geo:51.5115,3.7292?z=11
+[51.5824,  4.7761, 13, "Breda"               ,"dagtocht" ,2024, "Nederland"], // geo:51.56645,4.77425?z=13
 ];
 
 /*Data locaties 
@@ -21,7 +26,8 @@ const locaties = [
 [28.224080, -16.631187, "El Teide",                     "Canarische eilanden", "Spanje", 2025, "April", "TWG", "hiking",  1], //Tenerife Wandeling roques de Garcia
 [28.12899,  -17.27016,  "Parque Nacional de Garajonay", "Canarische eilanden", "Spanje", 2025, "April", "GNG", "natpark", 2], //Gomera National park Garajonay
 [28.531350, -16.280086, "Park rural de Anaga",          "Canarische eilanden", "Spanje", 2025, "April", "TPA", "hiking",  1], //Tenerige Park rural de Anaga
-]
+[51.582460,   4.775068, "Breda streetart",              "Breda",            "Nederland", 2024, "Maart", "BSA", "stad",    1], //Breda streetart wandeling
+] 
 
 // fotoTekst; de beschrijving bij elke foto
 // (0) fotonaam (=filename) (1) Omschrijving
@@ -38,4 +44,5 @@ const fotoText = [
 ["GNG0", "Garajonay NP"],
 ["GNG1", "Het is vaak mistig en vochtig"],
 ["TPA0", "Mooi, oud laurier bos in Anaga"],
+["BSA0", "Streetart in Breda"],
 ];

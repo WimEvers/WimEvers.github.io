@@ -1,3 +1,8 @@
+//TODO
+//
+// portrait fotos beter afbeelding (zorg voor correcte aspect ratio)
+// icon assignment veel korter opschrijven
+
 // global variables
 var lokatieNummer = 0; // = rij in array locaties = vakantiemarker
 var fotoSum = 0; // = aantal foto's bij deze vakantiemarker
@@ -37,10 +42,9 @@ function zoomregioa() {
     console.log("regio selected is " + regiodetail + "vakregio is " + vakregio[regioNummer][3] );
     //hier komt de loop over een specifiek regio, in eerste instantie alleen voor Canarische eilanden
     // TODO uitbreiden met willekeurige regio
-    if (regiodetail == "Canarische eilanden") {
-      console.log("in if statement");
+    //if (regiodetail == "Canarische eilanden") {
       for (var j = 0; j < locaties.length; j++) {
-        if (locaties[j][3] = regiodetail) {
+        if (locaties[j][3] = regiodetail) { // alleen de locaties bij deze vakantie
           iconType = locaties[j][8];
           console.log("regiodetail" + regiodetail + ": " + locaties[j][2]);
           console.log("icon type: ", iconType)
@@ -82,11 +86,9 @@ function zoomregioa() {
         } // end if
       } // end for
     } //end if
-  } // end if
   //document.getElementById("map").removeEventListener()
   document.getElementById("map").addEventListener("click", zoomregiob); // wacht tot de gebruiker op een van de nieuwe markers klikt
-
-}
+} // end functie
  // laat een of meerdere foto zien die erbij horen
  
 function zoomregiob() { 
