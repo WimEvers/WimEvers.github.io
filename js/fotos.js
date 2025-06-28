@@ -20,7 +20,7 @@ const locaties = [
 [28.07420,  -17.23017,  "Barranco de Guarimiar",        "Canarische eilanden", "Spanje", 2025, "April", "GKG", "kloof",   1], //Gomera Kloof barranco de Guarimiar
 [28.224080, -16.631187, "El Teide",                     "Canarische eilanden", "Spanje", 2025, "April", "TWG", "hiking",  1], //Tenerife Wandeling roques de Garcia
 [28.12899,  -17.27016,  "Parque Nacional de Garajonay", "Canarische eilanden", "Spanje", 2025, "April", "GNG", "natpark", 2], //Gomera National park Garajonay
-[28.531350, -16.280086, "Park rural de Anaga",          "Canarische eilanden", "Spanje", 2025, "April", "TPA", "hiking",  0], //Tenerige Park rural de Anaga
+[28.531350, -16.280086, "Park rural de Anaga",          "Canarische eilanden", "Spanje", 2025, "April", "TPA", "hiking",  1], //Tenerige Park rural de Anaga
 ]
 
 // fotoTekst; de beschrijving bij elke foto
