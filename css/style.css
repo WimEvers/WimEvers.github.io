@@ -90,11 +90,12 @@ footer { /* voor bronvermeldingen */
   display: grid;
   grid-template-columns: auto auto;
   grid-auto-rows: 45px;
+  vertical-align: middle;
 }
 #headitem {
-   grid-column: 1 / span 2;
-   text-align: center;
-   font-size: 1.5em;
+  grid-column: 1 / span 2;
+  text-align: center;
+  font-size: 1.5em;
 }
 
 #bron {

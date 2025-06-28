@@ -27,7 +27,7 @@ const locaties = [
 // (0) fotonaam (=filename) (1) Omschrijving
 const fotoText = [
 ["TLS0", "Hotel Rural Case Amarilla in Los Tilos; een bananen plantage"],
-["TMG1", "Hotel Rural Finca Salamanca in Guimar; een voormalige avocado plantage"],
+["TGM0", "Hotel Rural Finca Salamanca in Guimar; een voormalige avocado plantage"],
 ["GHG0", "Hotel Apartamentos Los Telares in Hermigua"],
 ["GHG1", "Uitzicht vanaf ons balkon"],
 ["GWA0", "Het gaat steil omhoog over de Camino de los Pasos"],

@@ -195,7 +195,7 @@ function showFoto() //foto met fotocode en ditFotoNummer laten zien
 
 // icons LEVEL 1
 // blauw        Kleur R 58,   G 197, B 199
-var vakIcon = L.icon({
+var vakantieIcon = L.icon({
     iconUrl: "mapicons/vakantie.png",
     iconSize:     [38, 44], // size of the icon
     iconAnchor:   [19, 44], // point of the icon which will correspond to marker's location
@@ -207,8 +207,8 @@ var tripIcon = L.icon({
     iconAnchor:   [19, 44], // point of the icon which will correspond to marker's location
     popupAnchor:  [0, -50] // point from which the popup should open relative to the iconAnchor
 });
-var dagIcon = L.icon({
-    iconUrl: "mapicons/dichtocht.png",
+var dagtochtIcon = L.icon({
+    iconUrl: "mapicons/dagtocht.png",
     iconSize:     [38, 44], // size of the icon
     iconAnchor:   [19, 44], // point of the icon which will correspond to marker's location
     popupAnchor:  [0, -50] // point from which the popup should open relative to the iconAnchor
@@ -322,8 +322,6 @@ img.src ="mapicons/miclogo.gif";
 img.title = "Source";
 document.getElementById("bron").appendChild(img);
 
-
-
 // initialisatie van de wereld map
 
 var mymap = L.map('map').setView([10.0,15.0], 3);  // hele wereld = geo:37.09,-0.53?z=3
@@ -333,17 +331,31 @@ var mymap = L.map('map').setView([10.0,15.0], 3);  // hele wereld = geo:37.09,-0
   attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(mymap);
 
-// lijst van alle regiomakers
+// lijst van alle regio's
 
 let regionaam;
 let regiofound = "none";
 const markerListA = [];
 for (let j = 0; j < vakregio.length; ++j) {
-    regionaam="<p>"+vakregio[j][3]+"</p>";
-    console.log(regionaam);
-    markerA = L.marker([vakregio[j][0], vakregio[j][1]]).addTo(mymap).bindPopup(regionaam).openPopup();
-    console.log("marker A:" + markerA);
-    markerListA.push(markerA);
+  regionaam="<p>"+vakregio[j][3]+"</p>";
+  markerA = L.marker([vakregio[j][0], vakregio[j][1]]);
+  iconType = vakregio[j][4];
+  console.log("regionaam:" + regionaam + "icon type: " + iconType );
+  switch (iconType) {
+    case "vakantie":
+      markerA.setIcon(vakantieIcon); //hier juiste icon type neerzetten
+      break;
+    case "trip":
+      markerA.setIcon(tripIcon); //hier juiste icon type neerzetten
+      break;  
+    case "dagtocht":
+      markerA.setIcon(dagtochtIcon); //hier juiste icon type neerzetten
+      break;
+    default: // hier geen explicite default
+  }
+  console.log(iconType + "Icon bij: ", vakregio[j][2]);
+  markerA.addTo(mymap).bindPopup(locaties[j][2]).openPopup(); //openPopup kan weg?  
+  markerListA.push(markerA);
 };
 mymap.closePopup()
 console.log("markerlist a defined "+markerListA.length+" items");
