@@ -35,6 +35,8 @@ function zoomregioa() {
     } // end for
     mymap.closePopup();
   } //end if
+  document.getElementById("legendalevel1").style.zIndex = "2";
+  document.getElementById("legendalevel2").style.zIndex = "5";
   document.getElementById("map").addEventListener("click", zoomregiob); // wacht tot de gebruiker op een van de nieuwe markers klikt
   detailLevel = 2;
 } // end functie

@@ -32,16 +32,48 @@ let kloofIcon = L.icon({iconUrl: "mapicons/canyon.png"});
 let bosIcon = L.icon({iconUrl: "mapicons/forest.png"});
 let natparkIcon = L.icon({iconUrl: "mapicons/natpark.png"});
 let parkIcon = L.icon({iconUrl: "mapicons/park.png"});
+let stadjeIcon = L.icon({iconUrl: "mapicons/stadje.png"})
 console.log("icons defined");  
 
 // icons toevoegen aan legenda
 debugger;
 
+//Level 1
 let img = document.createElement('img');
+img.src ="mapicons/vakantie.png";
+img.title = "Vakantie";
+document.getElementById("img11").appendChild(img);
+let txt = document.createElement("p")
+txt.innerHTML = " Vakantie";
+document.getElementById("txt11").appendChild(txt);
+
+img = document.createElement('img');
+img.src ="mapicons/trip.png";
+img.title = "Trip";
+document.getElementById("img12").appendChild(img);
+txt = document.createElement("p")
+txt.innerHTML = "Trip";
+document.getElementById("txt12").appendChild(txt);
+
+img = document.createElement('img');
+img.src ="mapicons/dagtocht.png";
+img.title = "Dagtocht";
+document.getElementById("img13").appendChild(img);
+txt = document.createElement("p")
+txt.innerHTML = "Dagtocht";
+document.getElementById("txt13").appendChild(txt);
+
+img = document.createElement('img');
+img.src ="mapicons/miclogo.gif";
+img.title = "Source";
+document.getElementById("bron1").appendChild(img);
+
+//level 2
+img = document.createElement('img');
 img.src ="mapicons/hotel.png";
 img.title = "Hotel";
 document.getElementById("img1").appendChild(img);
-let txt = document.createElement("p")
+txt = document.createElement("p")
 txt.innerHTML = "Hotel, B&B";
 document.getElementById("txt1").appendChild(txt);
 
@@ -86,9 +118,17 @@ txt.innerHTML = "Museum";
 document.getElementById("txt6").appendChild(txt);
 
 img = document.createElement('img');
+img.src ="mapicons/stadje.png";
+img.title = "Stadje";
+document.getElementById("img7").appendChild(img);
+txt = document.createElement("p")
+txt.innerHTML = "Stadje";
+document.getElementById("txt7").appendChild(txt);
+
+img = document.createElement('img');
 img.src ="mapicons/miclogo.gif";
 img.title = "Source";
-document.getElementById("bron").appendChild(img);
+document.getElementById("bron2").appendChild(img);
 
 // initialisatie van de wereld map
 
@@ -155,6 +195,9 @@ for (let j = 0; j < locaties.length; ++j) {
         break;
       case "museum":
         markerB.setIcon(museumIcon); //hier juiste icon type neerzetten
+        break;
+      case "stadje":
+        markerB.setIcon(stadjeIcon); //hier juiste icon type neerzetten
         break;
       default:
     } // end switch     

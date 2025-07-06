@@ -77,13 +77,13 @@ footer { /* voor bronvermeldingen */
   font-weight: lighter;
 }
 
-#legenda {
+#legendalevel1 {
   position: absolute;
   background: white;
   width: 200px;
   right: 20px;
   top: 50px;
-  height: 400px;
+  height: 225px;
   z-index: 10;
   border: 2px solid black;
   padding: 2px;
@@ -92,13 +92,36 @@ footer { /* voor bronvermeldingen */
   grid-auto-rows: 45px;
   vertical-align: middle;
 }
+
+#legendalevel2 {
+  position: absolute;
+  background: white;
+  width: 200px;
+  right: 20px;
+  top: 50px;
+  height: 420px;
+  z-index: 2;
+  border: 2px solid black;
+  padding: 2px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-auto-rows: 45px;
+  vertical-align: middle;
+  
+}
+
 #headitem {
   grid-column: 1 / span 2;
   text-align: center;
   font-size: 1.5em;
 }
 
-#bron {
+#bron1 {
+   grid-column: 1 / span 2;
+   margin: auto;
+}
+
+#bron2 {
    grid-column: 1 / span 2;
    margin: auto;
 }
