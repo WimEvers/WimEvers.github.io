@@ -1,7 +1,7 @@
 // Deze file geeft 3 arrays
 // TODO: Deze is gegenereerd door het python programma genFoto.py
 // 1.e4 e6 2.Qe2 c5 3.g3 Nc6 4.Bg2 Nd4 5.Qd3 d5 6.c3 Nc6 7.exd5 exd5 8.Bxd5 Be6 9.Bxc6+ bxc6 10.Qxd8+ Rxd8 11.Ne2 Nf6 12.d4 Be7 13.O-O O-O 14.Re1 cxd4 15.Nxd4 Bc5 16.Be3 Ng4 17.b4 Bxd4 18.Bxd4 Ra8
-
+// r4rk1/5ppp/2p1b3/p7/PP1B2n1/2P3P1/3N1P1P/R3R1K1 b - a3 0 20
 /*Data vakanties 
 formaat: (0)latitude, (1)langitude, (2)zoomfactor, (3)regio (4)vakantiesoort (5)jaar (6)land*/
 const vakregio = [
@@ -13,6 +13,7 @@ const vakregio = [
 [51.0236,  3.6773, 12, "Gent"                ,"trip"     ,2024, "Belgie"],    // geo:51.0236,3.6773?z=12
 [51.5115,  3.7292, 11, "Zeeland"             ,"trip"     ,2024, "Nederland"], // geo:51.5115,3.7292?z=11
 [51.5824,  4.7761, 13, "Breda"               ,"dagtocht" ,2024, "Nederland"], // geo:51.56645,4.77425?z=13
+[50.4335,  7.3471, 10, "Koblenz, Amigo's"    ,"trip"     ,2025, "Duitsland"], //geo:50.4335,7.3471?z=10
 ];
 
 /*Data locaties 
