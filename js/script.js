@@ -33,6 +33,7 @@ let bosIcon = L.icon({iconUrl: "mapicons/forest.png"});
 let natparkIcon = L.icon({iconUrl: "mapicons/natpark.png"});
 let parkIcon = L.icon({iconUrl: "mapicons/park.png"});
 let stadjeIcon = L.icon({iconUrl: "mapicons/stadje.png"})
+let fietsenIcon = L.icon({iconUrl: "mapicons/bicycle.png"})
 console.log("icons defined");  
 
 // icons toevoegen aan legenda
@@ -126,6 +127,14 @@ txt.innerHTML = "Stadje";
 document.getElementById("txt7").appendChild(txt);
 
 img = document.createElement('img');
+img.src ="mapicons/fietsen.png";
+img.title = "fietsen";
+document.getElementById("img8").appendChild(img);
+txt = document.createElement("p")
+txt.innerHTML = "fietsen";
+document.getElementById("txt8").appendChild(txt);
+
+img = document.createElement('img');
 img.src ="mapicons/miclogo.gif";
 img.title = "Source";
 document.getElementById("bron2").appendChild(img);
@@ -198,6 +207,9 @@ for (let j = 0; j < locaties.length; ++j) {
         break;
       case "stadje":
         markerB.setIcon(stadjeIcon); //hier juiste icon type neerzetten
+        break;
+      case "fietsen":
+        markerB.setIcon(fietsenIcon); //hier juiste icon type neerzetten
         break;
       default:
     } // end switch     
