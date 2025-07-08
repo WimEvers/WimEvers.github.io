@@ -55,5 +55,11 @@ const fotoText = [
 ["BSA0", 800, 600 , "Streetart in Breda"],
 ["DEF0", 800, 361 , "Fietsen door de Hoge Venen"],
 ["DEF1", 316, 600 , "Vennbahn Radweg"],
+["DBM0", 450, 600 , "De stadsmuur bij Bad Munstereifel"],
+["DKO0", 800, 600 , "Festung Ehrenbreitstein"],
+["DKO1", 450, 600 , "Kaiser Wilhelm Denkmal bij het Deutsches Eck"],
+["DRK0", 800, 600 , "De ingang van de kloof"],
+["DRK1", 450, 600 , "Het is een mooie kloof"],
+["DBB0", 800, 600 , "Mooie vakwerkhuizen"],
 ];
-//["", ""],
+//["", 800, 600 ,""],
