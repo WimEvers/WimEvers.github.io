@@ -30,10 +30,10 @@ const locaties = [
 [28.531350, -16.280086, "Park rural de Anaga",          "Canarische eilanden", "Spanje", 2025, "April",    "TPA", "hiking",  1], //Tenerige Park rural de Anaga
 [51.582460,   4.775068, "Breda streetart",              "Breda",            "Nederland", 2024, "Maart",    "BSA", "stad",    1], //Breda streetart wandeling
 [50.512202,   6.168755, "Eifel",                        "Eifel",            "Duitsland", 2024, "Augustus", "DEF", "fietsen", 2], //Eifel vakantie Konzen
-[50.554300,   6.763818, "Bad Munstereifel",             "Koblenz",          "Duitsland", 2025, "Juli",     "DBM", "stadje",  0], //geo:50.554300,6.763818?z=19
-[50.358374,   7.599401, "Koblenz",                      "Koblenz",          "Duitsland", 2025, "Juli",     "DKO", "stadje",  0], //geo:50.358374,7.599401?z=19
-[50.316412,   7.626416, "Rupertsklamm",                 "Koblenz",          "Duitsland", 2025, "Juli",     "DRK", "kloof",   0], //geo:50.316412,7.626416?z=19
-[50.27169,    7.646321, "Braubach",                     "Koblenz",          "Duitsland", 2025, "Juli",     "DBB", "stadje",  0], //geo:50.271698,7.646321?z=19
+[50.554300,   6.763818, "Bad Munstereifel",             "Koblenz",          "Duitsland", 2025, "Juli",     "DBM", "stadje",  1], //geo:50.554300,6.763818?z=19
+[50.358374,   7.599401, "Koblenz",                      "Koblenz",          "Duitsland", 2025, "Juli",     "DKO", "stadje",  2], //geo:50.358374,7.599401?z=19
+[50.316412,   7.626416, "Rupertsklamm",                 "Koblenz",          "Duitsland", 2025, "Juli",     "DRK", "kloof",   2], //geo:50.316412,7.626416?z=19
+[50.27169,    7.646321, "Braubach",                     "Koblenz",          "Duitsland", 2025, "Juli",     "DBB", "stadje",  1], //geo:50.271698,7.646321?z=19
 ] 
 //[,   , "",              "",            "", 202, "", "", "",    0], //
 // fotoTekst; de beschrijving bij elke foto
