@@ -30,10 +30,13 @@ const locaties = [
 [28.531350, -16.280086, "Park rural de Anaga",          "Canarische eilanden", "Spanje", 2025, "April",    "TPA", "hiking",  1], //Tenerige Park rural de Anaga
 [51.582460,   4.775068, "Breda streetart",              "Breda",            "Nederland", 2024, "Maart",    "BSA", "stad",    1], //Breda streetart wandeling
 [50.512202,   6.168755, "Eifel",                        "Eifel",            "Duitsland", 2024, "Augustus", "DEF", "fietsen", 2], //Eifel vakantie Konzen
-[50.554300,   6.763818, "Bad Munstereifel",             "Koblenz",          "Duitsland", 2025, "Juli",     "DBM", "stadje",  1], //geo:50.554300,6.763818?z=19
-[50.358374,   7.599401, "Koblenz",                      "Koblenz",          "Duitsland", 2025, "Juli",     "DKO", "stadje",  2], //geo:50.358374,7.599401?z=19
-[50.316412,   7.626416, "Rupertsklamm",                 "Koblenz",          "Duitsland", 2025, "Juli",     "DRK", "kloof",   2], //geo:50.316412,7.626416?z=19
-[50.27169,    7.646321, "Braubach",                     "Koblenz",          "Duitsland", 2025, "Juli",     "DBB", "stadje",  1], //geo:50.271698,7.646321?z=19
+[51.06178,    3.67164,  "Bourgoyen",                    "Gent",                "Belgie", 2024, "Augustus", "GBG", "park",    1], //Gent BourGoyen
+[51.05697,    3.72080,  "De stad Gent",                 "Gent",                "Belgie", 2024, "Augustus", "BGT", "stadje",  2], //Belgie GentT
+[51.05697,    3.72080,  "De Leie",                      "Gent",                "Belgie", 2024, "Augustus", "BGL", "fietsen", 1], //Belgie Gent Leie
+[50.554300,   6.763818, "Bad Munstereifel",             "Koblenz",          "Duitsland", 2025, "Juli",     "DBM", "stadje",  1], //Duitsland Bad Munstereifel
+[50.358374,   7.599401, "Koblenz",                      "Koblenz",          "Duitsland", 2025, "Juli",     "DKO", "stadje",  2], //Duitsland KOblenz
+[50.316412,   7.626416, "Rupertsklamm",                 "Koblenz",          "Duitsland", 2025, "Juli",     "DRK", "kloof",   2], //Duitsland RupertsKlamm
+[50.27169,    7.646321, "Braubach",                     "Koblenz",          "Duitsland", 2025, "Juli",     "DBB", "stadje",  1], //Duitsland BrauBach
 ] 
 //[,   , "",              "",            "", 202, "", "", "",    0], //
 // fotoTekst; de beschrijving bij elke foto
@@ -61,5 +64,9 @@ const fotoText = [
 ["DRK0", 800, 600 , "De ingang van de kloof"],
 ["DRK1", 450, 600 , "Het is een mooie kloof"],
 ["DBB0", 800, 600 , "Mooie vakwerkhuizen"],
+["GBG0", 800, 600 , "Het park Bourgoyen"],
+["BGT0", 800, 600 , "Gent by night"],
+["BGT1", 800, 600 , "De bierkant"],
+["BGL0", 800, 600 , "Fietstocht langs de Leie; kasteel van Ooidonk"],
 ];
 //["", 800, 600 ,""],
