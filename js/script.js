@@ -127,7 +127,7 @@ txt.innerHTML = "Stadje";
 document.getElementById("txt7").appendChild(txt);
 
 img = document.createElement('img');
-img.src ="mapicons/fietsen.png";
+img.src ="mapicons/bicycle.png";
 img.title = "fietsen";
 document.getElementById("img8").appendChild(img);
 txt = document.createElement("p")
