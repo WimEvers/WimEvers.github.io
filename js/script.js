@@ -226,22 +226,11 @@ if (detailLevel == 1) {
     markerLevel1[j].addTo(mymap).bindPopup(vakregio[j][3]); 
   };
 }
-/* screen size
-let w = window.innerWidth;
-let h = window.innerHeight;
-const navheight = 28+'px';
-const footerheight = 20+'px';
-//alert("Browser width: " + w + ", height: " + h + ".");
-  let el = document.getElementById("mymap");
-  if (el) {
-    el.style.height = h - navheight - footerheight;
-    el.style.width = w;
-      //el.style.height = ""+h+"px";
-    } */
-    
+
+/* 
 let popup = L.popup();
 
-/*function onMapClick(e) 
+function onMapClick(e) 
 {
    popup
     .setLatLng(e.latlng)
