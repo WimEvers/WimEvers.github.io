@@ -226,7 +226,9 @@ if (detailLevel == 1) {
     markerLevel1[j].addTo(mymap).bindPopup(vakregio[j][3]); 
   };
 }
-
+let iaheigth = window.innerHeight +'px';
+//document.getElementById("imagearea").style.width = ;
+document.getElementById("imagearea").style.heigth = iaheigth;
 /* 
 let popup = L.popup();
 

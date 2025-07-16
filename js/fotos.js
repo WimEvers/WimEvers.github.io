@@ -1,7 +1,7 @@
 // Deze file geeft 3 arrays
 // TODO: Deze is gegenereerd door het python programma genFoto.py
 // 
-// rr4k1/5p1p/2p3p1/2Bb4/PP4nN/6P1/5P1P/R3R1K1 w - - 0 25
+// r3r3/4B1kp/2p2pp1/P2b4/1P4n1/6P1/5PNP/R3R1K1 w - - 0 28
 /*Data vakanties 
 formaat: (0)latitude, (1)langitude, (2)zoomfactor, (3)regio (4)vakantiesoort (5)jaar (6)land*/
 const vakregio = [

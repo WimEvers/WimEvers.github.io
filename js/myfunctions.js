@@ -7,6 +7,10 @@ function init(){
   //const navheight = 28+'px';
   //const footerheight = 20+'px';
   alert("Browser width: " + w + ", height: " + h + ".");
+  debugger;
+  let iaheigth = h +'px';
+  //document.getElementById("imagearea").style.width = ;
+  document.getElementById("imagearea").style.heigth = iaheigth;
 /*let el = document.getElementById("mymap");
   if (el) {
     el.style.height = h - navheight - footerheight;
@@ -122,13 +126,11 @@ function showFoto() //foto met fotocode en ditFotoNummer laten zien
     }
   }
   // zichtbaar maken
+  debugger;
   let imarea = document.getElementById("imagearea")
   imarea.style.zIndex = "5";
-  // venstergrootte is afhankelijk van de aspect ratio van de foto zelf (portrait of landscape)
-  debugger;
+  //document.getElementById("imagearea").style.width = ;
   console.log("image: "+ fotoimage.src + " size  w: " + fotoimage.naturalWidth + " height: " + fotoimage.naturalHeight);
-  //fotoimage.width = fotoText[index][1]; 
-  //fotoimage.height = fotoText[index][2];
 } 
  
 // functies bij de foto buttons
