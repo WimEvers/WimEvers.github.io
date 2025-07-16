@@ -126,9 +126,7 @@ function showFoto() //foto met fotocode en ditFotoNummer laten zien
   imarea.style.zIndex = "5";
   // venstergrootte is afhankelijk van de aspect ratio van de foto zelf (portrait of landscape)
   debugger;
-  console.log("image: "+ fotoimage.src + "size  w: " + fotoimage.naturalWidth + " height: " + fotoimage.naturalHeight);
-  //newwidth = fotoText[index][1];
-  //newheight = fotoText[index][2];
+  console.log("image: "+ fotoimage.src + " size  w: " + fotoimage.naturalWidth + " height: " + fotoimage.naturalHeight);
   //fotoimage.width = fotoText[index][1]; 
   //fotoimage.height = fotoText[index][2];
 } 
