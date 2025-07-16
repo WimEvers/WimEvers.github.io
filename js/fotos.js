@@ -78,7 +78,7 @@ const fotoText = [
 ["DRK0", 800, 600 , "De ingang van de kloof", "png"],
 ["DRK1", 450, 600 , "Het is een mooie kloof", "png"],
 ["DBB0", 800, 600 , "Mooie vakwerkhuizen", "png"],
-["GBG0", 800, 600 , "Het park Bourgoyen", "png"],
+["GBG0", 800, 600 , "Het Park Bourgoyen", "png"],
 ["BGT0", 800, 600 , "Gent by night", "png"],
 ["BGT1", 800, 600 , "Gravensteen", "png"],
 ["BGL0", 800, 600 , "Fietstocht langs de Leie; kasteel van Ooidonk", "png"],
