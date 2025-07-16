@@ -92,5 +92,4 @@ const fotoText = [
 ["BAB1", 800, 360 , "Bij het riddertournooi", "png"],
 ["BAO0", 800, 361 , "De ruine van de Abdij van Orval", "png"],
 ]
-//
 //["", 800, 600 , ""],
