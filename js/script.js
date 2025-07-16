@@ -1,7 +1,7 @@
 //TODO
 //
 // portrait fotos beter afbeelding (zorg voor correcte aspect ratio)
-// icon assignment veel korter opschrijven
+//
 
 // global variables
 let lokatieNummer = 0; // = rij in array locaties = vakantiemarker
@@ -15,25 +15,25 @@ let detailLevel = 1; // = inzoom level
 myIcons = L.Icon.extend({
   options: {
     iconSize:     [38, 44], // size of the icon
-    iconAnchor:   [19, 44], // point of the icon which will correspond to marker's location
+    iconAnchor:   [19, 44], // point of the icon which will correspond to marker's location, [0,0] is top left
     popupAnchor:  [0, -50] // point from which the popup should open relative to the iconAnchor
   }
 });
 // icons LEVEL 1
 // blauw        Kleur R 58,   G 197, B 199 https://mapicons.mapsmarker.com/
 let vakantieIcon = new myIcons({iconUrl: "mapicons/vakantie.png"});
-let tripIcon = L.icon({iconUrl: "mapicons/trip.png"});
-let dagtochtIcon = L.icon({iconUrl: "mapicons/dagtocht.png"});
+let tripIcon = new myIcons({iconUrl: "mapicons/trip.png"});
+let dagtochtIcon = new myIcons({iconUrl: "mapicons/dagtocht.png"});
 // icons LEVEL 2
 // licht groen  Kleur R 103,  G 197, B 71  https://mapicons.mapsmarker.com/
-let hotelIcon = L.icon({iconUrl: "mapicons/hotel.png"});
-let hikingIcon = L.icon({iconUrl: "mapicons/hiking.png"});
-let kloofIcon = L.icon({iconUrl: "mapicons/canyon.png"});
-let bosIcon = L.icon({iconUrl: "mapicons/forest.png"});
-let natparkIcon = L.icon({iconUrl: "mapicons/natpark.png"});
-let parkIcon = L.icon({iconUrl: "mapicons/park.png"});
-let stadjeIcon = L.icon({iconUrl: "mapicons/stadje.png"})
-let fietsenIcon = L.icon({iconUrl: "mapicons/bicycle.png"})
+let hotelIcon = new myIcons({iconUrl: "mapicons/hotel.png"});
+let hikingIcon = new myIcons({iconUrl: "mapicons/hiking.png"});
+let kloofIcon = new myIcons({iconUrl: "mapicons/canyon.png"});
+let bosIcon = new myIcons({iconUrl: "mapicons/forest.png"});
+let natparkIcon = new myIcons({iconUrl: "mapicons/natpark.png"});
+let parkIcon =new myIcons({iconUrl: "mapicons/park.png"});
+let stadjeIcon = new myIcons({iconUrl: "mapicons/stadje.png"})
+let fietsenIcon = new myIcons({iconUrl: "mapicons/bicycle.png"})
 console.log("icons defined");  
 
 // icons toevoegen aan legenda

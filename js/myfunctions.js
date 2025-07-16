@@ -96,14 +96,14 @@ function showFoto() //foto met fotocode en ditFotoNummer laten zien
 {
   let fotoimage = document.getElementById("foto");
   fotocode = locaties[lokatieNummer][7]
-  fotoimage.src = "image/" + fotocode + ditFotoNummer +".png";
-  fotoimage.alt = locaties[lokatieNummer][2] + ", " + locaties[lokatieNummer][5];
   // fotobeschrijving uit array fototext halen
   let filename = fotocode + ditFotoNummer;
   let index = -1;
   for (let j = 0; j < fotoText.length; j++) {
     if (fotoText[j][0] == filename) {
       document.getElementById("onderschrift").innerHTML = fotoText[j][3];
+      fotoimage.src = "image/" + fotocode + ditFotoNummer + "." + fotoText[j][4]
+      fotoimage.alt = locaties[lokatieNummer][2] + ", " + locaties[lokatieNummer][5];
       index = j
       break;
     }
@@ -114,10 +114,10 @@ function showFoto() //foto met fotocode en ditFotoNummer laten zien
   // venstergrootte is afhankelijk van de aspect ratio van de foto zelf (portrait of landscape)
   debugger;
   console.log("image: "+ fotoimage.src + "size  w: " + fotoimage.naturalWidth + " height: " + fotoimage.naturalHeight);
-  newwidth = fotoText[index][1];
-  newheight = fotoText[index][2];
-  fotoimage.width = fotoText[index][1]; 
-  fotoimage.height = fotoText[index][2];
+  //newwidth = fotoText[index][1];
+  //newheight = fotoText[index][2];
+  //fotoimage.width = fotoText[index][1]; 
+  //fotoimage.height = fotoText[index][2];
 } 
  
 // functies bij de foto buttons
