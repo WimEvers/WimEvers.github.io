@@ -14,7 +14,7 @@ const vakregio = [
 [51.5115,  3.7292, 11, "Zeeland"             ,"trip"     ,2024, "Nederland"], // geo:51.5115,3.7292?z=11
 [28.276, -16.9409, 10, "Canarische eilanden" ,"vakantie" ,2025, "Spanje"], 
 [50.4335,  7.3471, 10, "Koblenz"             ,"trip"     ,2025, "Duitsland"], // geo:50.4335,7.3471?z=10
-[49.7969,  6.5461, 12, "Petit Suise"         ,"trip "    ,2025, "Duitsland"], //geo:49.7969,6.5461?z=12
+[49.7969,  6.5461, 12, "Petit Suise"         ,"trip"     ,2025, "Duitsland"], //geo:49.7969,6.5461?z=12
 ];
 //[,  , , ""             ,""     ,202, ""], // geo:50.4335,7.3471?z=10
 /*Data locaties 
