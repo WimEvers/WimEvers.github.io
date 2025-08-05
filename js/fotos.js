@@ -43,9 +43,9 @@ const locaties = [
 [50.358374,   7.599401, "Koblenz",                      "Koblenz",          "Duitsland", 2025, "Juli",     "DKO", "stadje",  2], //Duitsland KOblenz
 [50.316412,   7.626416, "Rupertsklamm",                 "Koblenz",          "Duitsland", 2025, "Juli",     "DRK", "kloof",   2], //Duitsland RupertsKlamm
 [50.27169,    7.646321, "Braubach",                     "Koblenz",          "Duitsland", 2025, "Juli",     "DBB", "stadje",  1], //Duitsland BrauBach
-[49.80444,    6.65377,  "GenovevaHoehle",               "Petit Suise",      "Duitsland", 2025, "Juli",     "DGH", "hiking",  3], //Duitsland Genoveva Hoehle
-[49.825508,   6.33880,  "Berdorf",                      "Petit Suise",      "Luxemburg", 2025, "Juli",     "DBD", "hiking",  3], //Luxemburg BerDorf 
-[49.846102,   6.440295, "Teufelsschlucht",              "Petit Suise",      "Duitsland", 2025, "Juli",     "DTS", "hiking",  4], //Duitsland TeufelsSchlucht
+[49.80444,    6.65377,  "Wandeling GenovevaHoehle",     "Petit Suise",      "Duitsland", 2025, "Juli",     "DGH", "hiking",  3], //Duitsland Genoveva Hoehle
+[49.825508,   6.33880,  "Wandeling Berdorf",            "Petit Suise",      "Luxemburg", 2025, "Juli",     "DBD", "hiking",  3], //Luxemburg BerDorf 
+[49.846102,   6.440295, "Wandeling Teufelsschlucht",    "Petit Suise",      "Duitsland", 2025, "Juli",     "DTS", "hiking",  4], //Duitsland TeufelsSchlucht
 ] 
 //[,   , "",              "",            "", 202, "", "", "",    0], //geo:49.63365,5.34751?z=16 Orval
 // fotoTekst; de beschrijving bij elke foto

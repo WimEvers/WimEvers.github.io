@@ -150,20 +150,36 @@ function stop() // venster met fotos sluiten
 
 function next() // volgende foto tonen
 {
-  console.log("next - count = ",ditFotoNummer)
+  console.log("fotonummer = ",ditFotoNummer);
+  debugger;
+  document.getElementById("prev").style.display = "inherit";
   if (ditFotoNummer < fotoSum - 1) 
   {
     ditFotoNummer = ditFotoNummer + 1;
     showFoto();
   }
+  // als er geen volgende foto's meer zijn, knop "next" niet meer laten zien
+  if (ditFotoNummer == fotoSum - 1)
+  {
+    document.getElementById("next").style.display = "none";
+    console.log("next disabled display = " + document.getElementById("next").style.display);
+  }
 }
+
 function prev() // vorige foto tonen
 {
-  console.log("prev - count = ",ditFotoNummer)
+  console.log("fotonummer = ",ditFotoNummer);
+  document.getElementById("next").style.display = "inherit";
   if(ditFotoNummer > 0) 
   {
     ditFotoNummer = ditFotoNummer - 1;
     showFoto();
+  }
+  // als er geen vorige foto's meer zijn, knop "prev" niet meer laten zien
+  if (ditFotoNummer == 0)
+  {
+    document.getElementById("prev").style.display = "none";
+    console.log("prev disabled display = " + document.getElementById("prev").style.display);
   }
 }
 
