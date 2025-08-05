@@ -1,19 +1,20 @@
 // Deze file geeft 3 arrays
 // TODO: Deze is gegenereerd door het python programma genFoto.py
 // 
-// r3r3/4B1kp/2p2pp1/P2b4/1P4n1/6P1/5PNP/R3R1K1 w - - 0 28
+// 
 /*Data vakanties 
 formaat: (0)latitude, (1)langitude, (2)zoomfactor, (3)regio (4)vakantiesoort (5)jaar (6)land*/
 const vakregio = [
-[28.276, -16.9409, 10, "Canarische eilanden" ,"vakantie" ,2025, "Spanje"], 
-[56.502,  -3.9220,  7, "Schotland"           ,"vakantie" ,2024, "UK"],
-[39.371,   2.7430,  9, "Mallorca"            ,"vakantie" ,2024, "Spanje"],
+[51.5824,  4.7761, 13, "Breda"               ,"dagtocht" ,2024, "Nederland"], // geo:51.56645,4.77425?z=13
 [49.6967,  5.3109, 11, "Ardennen"            ,"trip"     ,2024, "Belgie"],    // geo:49.6967,5.3139?z=11
 [50.5981,  6.2515, 12, "Eifel"               ,"trip"     ,2024, "Duitsland"], // geo:50.598068,6.251489?z=17
 [51.0236,  3.6773, 12, "Gent"                ,"trip"     ,2024, "Belgie"],    // geo:51.0236,3.6773?z=12
+[56.502,  -3.9220,  7, "Schotland"           ,"vakantie" ,2024, "UK"],
+[39.371,   2.7430,  9, "Mallorca"            ,"vakantie" ,2024, "Spanje"],
 [51.5115,  3.7292, 11, "Zeeland"             ,"trip"     ,2024, "Nederland"], // geo:51.5115,3.7292?z=11
-[51.5824,  4.7761, 13, "Breda"               ,"dagtocht" ,2024, "Nederland"], // geo:51.56645,4.77425?z=13
+[28.276, -16.9409, 10, "Canarische eilanden" ,"vakantie" ,2025, "Spanje"], 
 [50.4335,  7.3471, 10, "Koblenz"             ,"trip"     ,2025, "Duitsland"], // geo:50.4335,7.3471?z=10
+[49.7969,  6.5461, 12, "Petit Suise"         ,"trip "    ,2025, "Duitsland"], //geo:49.7969,6.5461?z=12
 ];
 //[,  , , ""             ,""     ,202, ""], // geo:50.4335,7.3471?z=10
 /*Data locaties 
@@ -42,6 +43,9 @@ const locaties = [
 [50.358374,   7.599401, "Koblenz",                      "Koblenz",          "Duitsland", 2025, "Juli",     "DKO", "stadje",  2], //Duitsland KOblenz
 [50.316412,   7.626416, "Rupertsklamm",                 "Koblenz",          "Duitsland", 2025, "Juli",     "DRK", "kloof",   2], //Duitsland RupertsKlamm
 [50.27169,    7.646321, "Braubach",                     "Koblenz",          "Duitsland", 2025, "Juli",     "DBB", "stadje",  1], //Duitsland BrauBach
+[49.80444,    6.65377,  "GenovevaHoehle",               "Petit Suise",      "Duitsland", 2025, "Juli",     "DGH", "hiking",  0], //Duitsland Genoveva Hoehle
+[49.80444,    6.65377,  "Berdorf",                      "Petit Suise",      "Luxemburg", 2025, "Juli",     "DBD", "hiking",  0], //Luxemburg BerDorf
+[49.80444,    6.65377,  "Teufelsschlucht",              "Petit Suise",      "Duitsland", 2025, "Juli",     "DTS", "hiking",  0], //Duitsland TeufelsSchlucht
 ] 
 //[,   , "",              "",            "", 202, "", "", "",    0], //geo:49.63365,5.34751?z=16 Orval
 // fotoTekst; de beschrijving bij elke foto
@@ -50,7 +54,7 @@ const locaties = [
 // alle gpx files weergeven in gpx.studio layer: mapbox outdoor via snipping tool saven als PNG, via IRFAN view saven met compression level 9 
 // nog veel kleiner via GIMP - Image - Mode - indexed, dan opslaan vis export als PNG file
 
-// size is niet meer nodig wel filetype (PNG voor kaarten, jpg voor foto's)
+// size is niet meer nodig wel filetype (PNG voor kaarten, JPG voor foto's)
 const fotoText = [
 ["TLS0", 800, 361 , "Hotel Rural Case Amarilla in Los Tilos; een bananen plantage", "png"],
 ["TGM0", 800, 1067, "Hotel Rural Finca Salamanca in Guimar; een voormalige avocado plantage", "png"],
