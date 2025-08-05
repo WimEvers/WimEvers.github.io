@@ -19,6 +19,8 @@ function init(){
     } */
     
     //alert("init called");
+  document.getElementById("legendalevel1").style.zIndex = "5";
+  document.getElementById("legendalevel2").style.zIndex = "2";
  }
  
 // deze functie zoomed in op de kaart en laat dan de details zien

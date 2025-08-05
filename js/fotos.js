@@ -52,7 +52,7 @@ const locaties = [
 // (0) fotonaam (=filename) (1) width px (2) height px (3) Omschrijving (4) file type
 // alle foto's saven als jpg, Quality level 50, progressive (zie folder AA Wim/Hobby/programming/size test)
 // alle gpx files weergeven in gpx.studio layer: mapbox outdoor via snipping tool saven als PNG, via IRFAN view saven met compression level 9 
-// nog veel kleiner via GIMP - Image - Mode - indexed, dan opslaan vis export als PNG file
+// nog veel kleiner via GIMP - Image - Mode - indexed, dan opslaan via export als PNG file
 
 // size is niet meer nodig wel filetype (PNG voor kaarten, JPG voor foto's)
 const fotoText = [
@@ -95,5 +95,15 @@ const fotoText = [
 ["BAB0", 446, 600 , "Middeleeuwsfeest op het kasteel van Bouillon", "png"],
 ["BAB1", 800, 360 , "Bij het riddertournooi", "png"],
 ["BAO0", 800, 361 , "De ruine van de Abdij van Orval", "png"],
+["DGH0", 800, 600 , "De route", "png"],
+["DGH1", 800, 600 , "De Genoveva Hoehle", "jpg"],
+["DGH2", 800, 600 , "Selfie", "jpg"],
+["DBD0", 800, 600 , "De route", "png"],
+["DBD1", 800, 600 , "Mooie lichtinval", "jpg"],
+["DBD2", 800, 600 , "Portret van ons twee", "jpg"],
+["DTS0", 800, 600 , "De route", "png"],
+["DTS1", 800, 600 , "Groepsfoto", "jpg"],
+["DTS2", 800, 600 , "De schlucht is plaatselijk nauw", "jpg"],
+["DTS3", 800, 600 , "Nils moet even ruig doen", "jpg"],
 ]
-//["", 800, 600 , ""],
+//["", 800, 600 , "", "jpg"],
