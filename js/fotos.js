@@ -15,8 +15,9 @@ const vakregio = [
 [28.276, -16.9409, 10, "Canarische eilanden" ,"vakantie" ,2025, "Spanje"], 
 [50.4335,  7.3471, 10, "Koblenz"             ,"trip"     ,2025, "Duitsland"], // geo:50.4335,7.3471?z=10
 [49.7969,  6.5461, 12, "Petit Suise"         ,"trip"     ,2025, "Duitsland"], //geo:49.7969,6.5461?z=12
+[61.231,   7.635,  7 , "Noorwegen"           ,"vakantie" ,2025, "Noorwegen"], // geo:61.231,7.635?z=7
 ];
-//[,  , , ""             ,""     ,202, ""], // geo:50.4335,7.3471?z=10
+//[,  , , ""             ,""     ,202, ""], // geo:61.231,7.635?z=7
 /*Data locaties 
 formaat: (0)latitude, (1)langitude, (2)plaatsnaam, (3)regio, (4)land, (5)jaartal, (6)maand, (7)fotocode (8) icon (9)aantal foto's*/
 const locaties = [
@@ -46,8 +47,13 @@ const locaties = [
 [49.80444,    6.65377,  "Wandeling GenovevaHoehle",     "Petit Suise",      "Duitsland", 2025, "Juli",     "DGH", "hiking",  3], //Duitsland Genoveva Hoehle
 [49.825508,   6.33880,  "Wandeling Berdorf",            "Petit Suise",      "Luxemburg", 2025, "Juli",     "DBD", "hiking",  3], //Luxemburg BerDorf 
 [49.846102,   6.440295, "Wandeling Teufelsschlucht",    "Petit Suise",      "Duitsland", 2025, "Juli",     "DTS", "hiking",  4], //Duitsland TeufelsSchlucht
+[55.860424,  -3.244858, "Pentland Hills",               "Schotland",        "VK",        2024, "Mei",      "UPH", "hiking",  2], //Uk Pentland Hills
+[55.94692,   -3.18260,  "Edinburgh",                    "Schotland",        "VK",        2024, "Mei",      "UEB", "stadje",  3], //Uk EdinBurgh
+[56.946232,  -2.197067, "Donnottar Castle",             "Schotland",        "VK",        2024, "Mei",      "UDC", "kasteel", 1], //Uk Donnottar Castle
+[56.946232,  -2.197067, "Burn O'Vat",                   "Schotland",        "VK",        2024, "Mei",      "UBV", "hiking",  2], //Uk Burn o'Vat
+[56.9883645, -3.544970, "Linn of Dee",                  "Schotland",        "VK",        2024, "Mei",      "ULD", "hiking",  2], //Uk Linn of Dee
 ] 
-//[,   , "",              "",            "", 202, "", "", "",    0], //geo:49.63365,5.34751?z=16 Orval
+//[,   , "",              "",            "", 202, "", "", "",    0], //geo:57.08383,-2.94569?z=16
 // fotoTekst; de beschrijving bij elke foto
 // (0) fotonaam (=filename) (1) width px (2) height px (3) Omschrijving (4) file type
 // alle foto's saven als jpg, Quality level 50, progressive (zie folder AA Wim/Hobby/programming/size test)
@@ -105,5 +111,15 @@ const fotoText = [
 ["DTS1", 800, 600 , "Groepsfoto", "jpg"],
 ["DTS2", 800, 600 , "De schlucht is plaatselijk nauw", "jpg"],
 ["DTS3", 800, 600 , "Nils moet even ruig doen", "jpg"],
+["UPH0", 800, 600 , "Pentland Hills", "jpg"],
+["UPH1", 800, 600 , "Pentland Hills; Glencore reservoir", "jpg"],
+["UEB0", 800, 600 , "Holyroot Park; St. Margareth's Loch", "jpg"],
+["UEB1", 800, 600 , "Edinburg Old Town: the bow", "jpg"],
+["UEB2", 800, 600 , "Edinburg; Duddlington Kirk ", "jpg"],
+["UDC0", 800, 600 , "Dunnottar Castle", "jpg"],
+["UBV0", 800, 600 , "Muir of Dinnet National Nature Reserve; Burn O'Vat", "jpg"],
+["UBV1", 800, 600 , "Muir of Dinnet National Nature Reserve", "jpg"],
+["ULD0", 800, 600 , "Linn of Dee", "jpg"],
+["ULD1", 800, 600 , "Linn of Dee; Lui water falls", "jpg"],
 ]
 //["", 800, 600 , "", "jpg"],

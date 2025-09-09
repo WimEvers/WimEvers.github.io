@@ -1,7 +1,6 @@
 //TODO
 //
-// portrait fotos beter afbeelding (zorg voor correcte aspect ratio)
-//
+// 6k1/1R3p1p/4pp2/8/r4P2/4P3/4K1PP/8 b k f3 0 8
 
 // global variables
 let lokatieNummer = 0; // = rij in array locaties = vakantiemarker
@@ -34,6 +33,7 @@ let natparkIcon = new myIcons({iconUrl: "mapicons/natpark.png"});
 let parkIcon =new myIcons({iconUrl: "mapicons/park.png"});
 let stadjeIcon = new myIcons({iconUrl: "mapicons/stadje.png"})
 let fietsenIcon = new myIcons({iconUrl: "mapicons/bicycle.png"})
+let kasteelIcon = new myIcons({iconUrl: "mapicons/castle.png"})
 console.log("icons defined");  
 
 // icons toevoegen aan legenda
@@ -143,10 +143,8 @@ document.getElementById("bron2").appendChild(img);
 
 let mymap = L.map('map').setView([10.0,15.0], 3);  // hele wereld = geo:37.09,-0.53?z=3
 
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  maxZoom: 19,
-  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-  }).addTo(mymap);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 19,
+attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(mymap);
 
 // lijst van alle regio's, vullen van de markers
 
@@ -210,6 +208,9 @@ for (let j = 0; j < locaties.length; ++j) {
         break;
       case "fietsen":
         markerB.setIcon(fietsenIcon); //hier juiste icon type neerzetten
+        break;
+      case "kasteel":
+        markerB.setIcon(kasteelIcon); //hier juiste icon type neerzetten
         break;
       default:
     } // end switch     

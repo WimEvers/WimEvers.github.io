@@ -6,7 +6,7 @@ function init(){
   let h = window.innerHeight;
   //const navheight = 28+'px';
   //const footerheight = 20+'px';
-  alert("Browser width: " + w + ", height: " + h + ".");
+  //alert("Browser width: " + w + ", height: " + h + ".");
   debugger;
   let iaheigth = h +'px';
   //document.getElementById("imagearea").style.width = ;
