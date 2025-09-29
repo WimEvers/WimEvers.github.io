@@ -1,6 +1,6 @@
 //TODO
 //
-// 6k1/1R3p2/4pp2/7p/r4P2/4P3/4K1PP/8 w k h6 0 9
+// r3k2r/pp1qb1pp/4p3/5p2/2nPn3/2P2NP1/PPQ3BP/R1B1K2R w KQkq - 4 16
 
 // global variables
 let lokatieNummer = 0; // = rij in array locaties = vakantiemarker
@@ -244,13 +244,13 @@ function onMapClick(e)
 
 //mymap.on('click', stop);  
 
-window.addEventListener('load', init); // nog niet in gebruik
+window.addEventListener('load', init); // zet de juiste z-index waarden voor de legenda
 
 document.getElementById("map").addEventListener("click", zoomregioa); // wacht tot de gebruiker op een marker klikt in de map-area
 
 document.getElementById("prev").addEventListener("click", prev);
 document.getElementById("next").addEventListener("click", next);
-document.getElementById("stop").addEventListener("click",stop); // knoppen bij de foto's
+document.getElementById("stop").addEventListener("click", stop); // knoppen bij de foto's
 
 
 
