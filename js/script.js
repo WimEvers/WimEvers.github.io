@@ -1,6 +1,6 @@
 //TODO
 //
-// r3k2r/pp1qb1pp/4p3/5p2/2nPn3/2P2NP1/PPQ3BP/R1B1K2R w KQkq - 4 16
+// 2rr2k1/1q2bnpp/4p3/pBP2p2/Pp1Pn3/1P3NP1/1BQ4P/1K1RR3 b - - 8 26
 
 // global variables
 let lokatieNummer = 0; // = rij in array locaties = vakantiemarker
